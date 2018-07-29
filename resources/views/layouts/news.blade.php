@@ -1,0 +1,64 @@
+@extends('main')
+
+@section('title', 'News - ')
+
+
+@section('content')
+
+<div class="container">
+
+    <h1 class="text-center news">Latest News</h1>
+    
+     @forelse($posts as $post)
+
+
+              <!-- POST -->
+                          
+                <div class="well pull-left"> 
+                  <div class="media-body post" style="background-color: #f6f6ec; ">
+                    <h2 class="post-h2"><a href="/news/{{$post->slug}}">{{ $post->title}}</a></h2>
+                    
+                    <img src="/uploads/avatars/{{ $post->user->avatar }}" style="width:32px; height:32px; top:10px; left:10px; border-radius:50%">
+                    Posted By: <a href="{{url('/dashboard/'.$post->user->username)}}"> {{$post->user->firstname . ' ' . $post->user->lastname }}</a> <br>
+                    
+                    <hr>
+
+                    <p>{!! Markdown::parse (str_limit ($post->body, 400)) !!}</p>
+
+                    <a href="/news/{{$post->slug}}">Read more &rarr;</a>
+
+                    <br>
+                   
+                    <ul class="list-inline list-unstyled">
+                    <br>
+                    <li><span> <i class="fas fa-calendar"></i>
+                    <p style="color:#444 !important;"> Published {{ $post->created_at->diffForHumans()}} | </span>
+                   
+                    @if( $post->replies->count() > 0 )
+                    <i class="fas fa-comment-dots"></i> {{ $post->replies->count() }} comment(s) 
+                    @else
+
+                      Be the first to comment :)
+
+                    @endif
+
+                   </p> </li> 
+                   
+                    </ul>
+               </div>
+
+               
+          </div>
+        
+
+      
+
+      @empty
+        <p style="color: #ccc;">No posts found</p>
+      @endforelse
+    
+  <center>{{ $posts->appends(Request::all())->render() }}</center>
+
+</div>
+
+@endsection
