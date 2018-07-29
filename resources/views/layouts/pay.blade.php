@@ -2,7 +2,7 @@
 @section('title', 'How To Pay - ')
 @section('content')
 
-<div class="container members pay">
+<div class="container members pay animated fadeInDown">
     <h1>How to Pay Dues</h1>
 
 <center><div class="col-md-5">
