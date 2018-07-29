@@ -51,7 +51,9 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => false,
-            'engine' => null,
+            'options'   => array(
+                PDO::ATTR_PERSISTENT => env('DB_PERSISTENT', false),
+            ),
         ],
 
         'pgsql' => [
