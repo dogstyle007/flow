@@ -14,6 +14,11 @@ footer p{
     color: #ccc !important;
 }
 
+.jumbotron p{
+  color: #ccc !important;
+}
+
+
 .jumbotron{
     padding: 0px !important;
     background-color: #444 !important;
@@ -59,11 +64,9 @@ hr{
 }
 
 .members .row{
-    margin-top: 25px;
+    
     text-align: center;
-    margin-left: auto;
-    
-    
+    margin: auto;
 
 }
 
@@ -91,7 +94,7 @@ hr{
     margin-left: 6px;
 }
 
-.members .col-md-5 {
+.members .col-md-5{
     position: relative;
     padding: 10px;
     display: -ms-flexbox;
@@ -322,6 +325,107 @@ nav{
 .pay ul li{
   padding: 5px;
 }
+
+.pay .col-md-5{
+  width: auto !important;
+  margin: auto !important;
+  text-align: center;
+}
+
+.pay .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+@media screen and (min-width: 700px) {
+  .navbar-collapse ul li{
+     font-size: 17px !important;
+     
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .registerbtn h3{
+     font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .registerbtn h3{
+     font-size: 25px !important;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .registerbtn h3{
+     font-size: 30px !important;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .registerbtn h3{
+     font-size: 40px !important;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .registerbtn p{
+     font-size: 14px !important;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .registerbtn p{
+     font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .registerbtn p{
+     font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .registerbtn p{
+     font-size: 20px !important;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .jumbotron .member-standing,
+  .jumbotron .member-standing h2{
+     font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .jumbotron .member-standing,
+  .jumbotron .member-standing h2{
+     font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .jumbotron .member-standing,
+  .jumbotron .member-standing h2{
+     font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .jumbotron .member-standing,
+  .jumbotron .member-standing h2{
+     font-size: 40px;
+  }
+}
+
+
+
+
 
   /*************************
   *******Header******

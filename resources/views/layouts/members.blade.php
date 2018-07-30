@@ -27,6 +27,7 @@
             </table>
             
           <p><a class="btn btn-secondary btn-center" href="{{url('/dashboard/'.$user->username)}}" role="button">View profile &raquo;</a></p>
+        
         </div>
 
         @endforeach

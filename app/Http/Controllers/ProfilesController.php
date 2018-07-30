@@ -60,7 +60,7 @@ class ProfilesController extends Controller
         $user->save();
 
 
-        alert()->success('Account profile updated successfully')->autoclose(3000);
+        alert()->success('Your account details have been successfully saved!')->autoclose(3000);
         //Session::flash('success', 'Account profile updated successfully');
 
         return redirect()->back();
