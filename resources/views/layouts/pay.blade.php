@@ -15,9 +15,9 @@
         <li>Enter Secret 4 digit Pin</li>
     </ul>
 
-    <b>Note:</b> Amount entered will be debited from your wallet and credited into the Association's account. An update will be done and email forward to you to confirm your transaction.
+    <b style="font-weight: bold">Note: </b> Amount entered will be debited from your wallet and credited into the Association's account. An update will be done and email forward to you to confirm your transaction.
     <br>
-    <b> Thank you! </b>
+    <b style="font-weight: bold"> Thank you! </b>
     <br>
     <img src="{{asset('/images/MobileMoneyGhana.jpg')}}" alt="mobile-money" width="220px" class="center">
 
