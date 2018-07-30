@@ -26,7 +26,7 @@
 
         @include('layouts.slider')
 
-    <h1 class="text-center member-standing animated slideInDown"><a  href="{{ url('/standing') }}"><i class="fas fa-users"></i> MEMBERS IN GOOD STANDING</a><span><h2><br><a href="/pay">HOW TO PAY DUES</a></h2></span></h1>
+    <h1 class="text-center member-standing wow animated slideInDown"><a  href="{{ url('/standing') }}"><i class="fas fa-users"></i> MEMBERS IN GOOD STANDING</a><span><h2><br><a href="/pay">HOW TO PAY DUES</a></h2></span></h1>
   
 
   <div class="container">
