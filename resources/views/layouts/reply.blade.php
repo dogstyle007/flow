@@ -5,38 +5,39 @@
 
 @section('content')
 
+<style>
+  .container{width:60%; !important;}
+</style>
 
-
-    <div class="container" style="margin-top:20px;">
+    <div class="container mobile" style="margin-top:20px;">
 
                 <div class="well pull-left"> 
                   <div class="media-body post" style="background-color: #f6f6ec;">
                   <h2 class="post-h2"><a href="/news/{{$post->slug}}">{{ $post->title}}</a></h2>
                   
                     <img src="/uploads/avatars/{{ $post->user->avatar }}" style="width:32px; height:32px; top:10px; left:10px; border-radius:50%">
-                    Posted By: <a href="{{url('/dashboard/'.$post->user->username)}}"> {{$post->user->fullName }}</a> <br>
-                  <hr>  
-                      <br>
-                          <p>{!! $post->body  !!}</p><!--<p style="color:#444 !important;">{!! $post->body !!}</p>-->
-                      <br/>
-                   
-                    <br>
+                    Posted By: <a href="{{url('/dashboard/'.$post->user->username)}}"> {{$post->user->fullName }}</a>
+                    <hr>  
+                      <p>{!! $post->body  !!}</p><!--<p style="color:#444 !important;">{!! $post->body !!}</p>-->
+          
                     <ul class="list-inline list-unstyled">
-                      <br>
-                    <li><span> <i class="fas fa-calendar"></i>
-                      <p style="color:#444 !important;">Published</p> {{ $post->created_at->diffForHumans()}}</span></li>
-                    <br>
+                     
+                    <li><span> 
+                      <p style="color:#444 !important;"><i class="fas fa-calendar"></i> Published {{ $post->created_at->diffForHumans()}}</span></p></li>
+        
                     @if(Auth::id() == $post->user->id)
-                      <li><span><a href="{{ URL::route('discussions.edit', ['id' => $post->id]) }}" class="btn btn-info btn-xs pull-right"><i class="fas fa-edit"></i> Edit Post</a></span>
-                      </li> <br>
+                      <li><span><a href="{{ URL::route('discussions.edit', ['id' => $post->id]) }}" class="btn btn-info btn-sm "><i class="fas fa-edit"></i> Edit Post</a></span></li> 
 
                       {!! Form::open(['route' => 'delete.post', 'id' => 'delete-post-form', 'method' => 'DELETE', 'class' => 'text-right']) !!}
                       
                       {!! Form::hidden('post_id', $post->id) !!}
 
-                      {!! Form::button('Delete', ['class' => 'btn btn-danger', 'type' => 'submit']) !!}
+                      {!! Form::button('Delete', ['class' => 'btn btn-danger btn-sm', 'type' => 'submit']) !!}
 
                       {!! Form::close() !!}
+                      
+                     
+                   
 
                     @endif  
 
@@ -51,20 +52,19 @@
                 <div class="media-body" style="background-color: #f6f6ec;"> 
                   
                     <img src="/uploads/avatars/{{ $reply->user->avatar }}" style="width:32px; height:32px; top:10px; left:10px; border-radius:50%">
-                    Posted By: <a href="{{url('/dashboard/'.$reply->user->username)}}"> {{$reply->user->firstname . ' ' . $reply->user->lastname }}</a> <br>
+                    Posted By: <a href="{{url('/dashboard/'.$reply->user->username)}}"> {{$reply->user->fullname }}</a>
                     <hr>
                     <p style="color:#444 !important;">{!! $reply->body !!}</p>
-                    <br/>
-                   
+
                     <ul class="list-inline list-unstyled">
-                    <br>
-                    <li><span> <i class="fas fa-calendar"></i>
-                    <p style="color:#444 !important;">Published</p></i> {{ $reply->created_at->diffForHumans()}}</span></li>
+                   
+                    <li><span> 
+                    <p style="color:#444 !important;"><i class="fas fa-calendar"></i> Published</i> {{ $reply->created_at->diffForHumans()}}</span></p></li>
                   
                     
                 @if(Auth::id() == $reply->user->id)
 
-                    <a href="{{ URL::route('reply.edit', ['id' => $reply->id]) }}" class="btn btn-info btn-xs pull-right"><i class="fas fa-edit"></i> Edit Reply</a>
+                    <a href="{{ URL::route('reply.edit', ['id' => $reply->id]) }}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Edit Reply</a>
                     
                        {!! Form::open(['route' => 'delete.reply', 'id' => 'delete-reply-form', 'method' => 'DELETE', 'class' => 'text-right']) !!}
 
@@ -72,7 +72,7 @@
                       
                       {!! Form::hidden('reply_id', $reply->id) !!}
 
-                      {!! Form::button('Delete', ['class' => 'btn btn-danger', 'type' => 'submit']) !!}
+                      {!! Form::button('Delete', ['class' => 'btn btn-danger btn-sm', 'type' => 'submit']) !!}
 
                       {!! Form::close() !!}
 
@@ -102,7 +102,7 @@
 
               <div class="form-group">
 
-              <button class="btn btn-info btn-xs pull-right">Leave a reply</button>
+              <button class="btn btn-info btn-sm pull-right">Leave a reply</button>
 
             </div> 
 

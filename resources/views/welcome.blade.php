@@ -35,7 +35,9 @@
       body { background: #444!important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
     </style>
     
+  
     @include('layouts.second-footer')
+
     
   </div> <!-- /container -->
 

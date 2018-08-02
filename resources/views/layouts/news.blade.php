@@ -5,7 +5,13 @@
 
 @section('content')
 
-<div class="container">
+<style>
+  .container{width:60%;}
+
+  
+</style>
+
+<div class="container mobile">
 
     <h1 class="text-center news">Latest News</h1>
     
@@ -27,12 +33,10 @@
 
                     <a href="/news/{{$post->slug}}">Read more &rarr;</a>
 
-                    <br>
-                   
                     <ul class="list-inline list-unstyled">
-                    <br>
-                    <li><span> <i class="fas fa-calendar"></i>
-                    <p style="color:#444 !important;"> Published {{ $post->created_at->diffForHumans()}} | </span>
+                   
+                    <li><span>
+                    <p style="color:#444 !important;"> <i class="fas fa-calendar"></i> Published {{ $post->created_at->diffForHumans()}} | </span>
                    
                     @if( $post->replies->count() > 0 )
                     <i class="fas fa-comment-dots"></i> {{ $post->replies->count() }} comment(s) 

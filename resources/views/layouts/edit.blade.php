@@ -4,6 +4,10 @@
 
 @section('content')
 
+<style>
+  .container{width:60%; !important;}
+</style>
+
 <div class="container">
 
     <div class="panel panel-default">
