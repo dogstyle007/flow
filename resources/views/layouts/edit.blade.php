@@ -30,7 +30,7 @@
                 
                 <div class="form-group">
                     
-                    <button class="btn btn-success pull-right" type="submit">Update Post</button>
+                    <button class="btn btn-success btn-sm pull-right" type="submit">Update Post</button>
                 
                 </div>
             
