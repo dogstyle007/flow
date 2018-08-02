@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->longText('about');
             $table->string('payment')->default('0');
             $table->string('region');
+            $table->string('diaspora')->nullable();
             $table->string('address');
             $table->string('avatar')->default('default.jpg');
             $table->string('password');

@@ -10,7 +10,7 @@
     <p>Kindly ensure you have a working sim card and registered with Mobile Money Service. Regardless of the Service provider(Network):</p>
 
     <ul >
-        <li>Deal the short code *0000#</li>
+        <li>Dial the short code *0000#</li>
         <li>Enter Dues Amount</li>
         <li>Enter Secret 4 digit Pin</li>
     </ul>

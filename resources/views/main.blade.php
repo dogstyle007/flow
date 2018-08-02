@@ -16,6 +16,7 @@
     <link href="{{ asset('/css/fontawesome.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/solid.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/summernote-lite.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
@@ -83,6 +84,7 @@
     <script src="{{ asset('/js/bootstrap4.7.js') }}"></script>
     <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('/tinymce/tinymce.min.js') }}"></script>
+    <!--<script src="{{ asset('/js/profile.js') }}"></script>-->
     
 
 @if (Session::has('sweet_alert.alert'))
@@ -105,7 +107,6 @@
         $(document).ready(function() {
             $('#summernote').summernote({
               height: '200px',
-              focus: true,
               placeholder: 'Content here...'
 
             });

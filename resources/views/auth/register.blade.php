@@ -168,25 +168,40 @@
                                 <style>
                                     select:invalid { color: gray; }
                                 </style>
+                                
                                   <option value="" disabled selected hidden>Select</option>
-                                  <option value="Greater Accra Region">Greater Accra Region</option>
-                                  <option value="Central Region">Central Region</option>
-                                  <option value="Eastern Region">Eastern Region</option>
-                                  <option value="Upper Eastern Region">Upper Eastern Region</option>
-                                  <option value="Upper West Region">Upper West Region</option>
-                                  <option value="Ashanti Region">Ashanti Region</option>
-                                  <option value="Western Region">Western Region</option>
-                                  <option value="Northern Region">Northern Region</option>
-                                  <option value="Eastern Region">Eastern Region</option>
-                                  <option value="Volta Region">Volta Region</option>
-                                  <option value="Brong Ahafo Region">Brong Ahafo Region</option>
-
+                                  <option value="Greater Accra">Greater Accra</option>
+                                  <option value="Central">Central</option>
+                                  <option value="Eastern">Eastern</option>
+                                  <option value="Upper East">Upper East</option>
+                                  <option value="Upper West">Upper West</option>
+                                  <option value="Ashanti">Ashanti</option>
+                                  <option value="Western">Western</option>
+                                  <option value="Northern">Northern</option>
+                                  <option value="Eastern">Eastern</option>
+                                  <option value="Volta">Volta</option>
+                                  <option value="Brong Ahafo">Brong Ahafo</option>
+                
                                 @if ($errors->has('region'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('region') }}</strong>
                                     </span>
                                 @endif
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="diaspora" class="col-md-4 col-form-label text-md-right">{{ __('Residence in diaspora') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="diaspora" type="diaspora" class="form-control{{ $errors->has('diaspora') ? ' is-invalid' : '' }}" name="diaspora">
+
+                                @if ($errors->has('diaspora'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('diaspora') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 

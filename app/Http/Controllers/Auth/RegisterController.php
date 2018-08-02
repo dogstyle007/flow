@@ -56,6 +56,8 @@ class RegisterController extends Controller
             'username' => 'required|string|max:20|min:5|unique:users',
             'phone' => 'required|digits_between:10,10|unique:users',
             'region' => 'required',
+            'diaspora',
+
         ]);
     }
 
@@ -78,6 +80,7 @@ class RegisterController extends Controller
             'yearOfCompletion'=> $data['yearOfCompletion'],
             'mStatus'=> $data['mStatus'],
             'region'=> $data['region'],
+            'diaspora'=> $data['diaspora'],
             'address'=> $data['address'],
             'password' => Hash::make($data['password']),
         ]);

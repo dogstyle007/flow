@@ -18,7 +18,7 @@ class User extends Authenticatable
     protected $table = 'users';
     
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'username', 'phone', 'employerName', 'designation', 'yearOfCompletion', 'mStatus', 'about', 'payment', 'region', 'address', 'password', 'avatar',
+        'firstname', 'lastname', 'email', 'username', 'phone', 'employerName', 'designation', 'yearOfCompletion', 'mStatus', 'about', 'payment', 'region', 'diaspora', 'address', 'password', 'avatar',
     ];
 
 
@@ -38,6 +38,8 @@ class User extends Authenticatable
     protected $attributes = [
         'about' => 'Tell us about yourself here...'
     ];
+
+  
 
     /**
      * The attributes that should be hidden for arrays.

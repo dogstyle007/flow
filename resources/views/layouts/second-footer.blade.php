@@ -1,18 +1,18 @@
 <!-- Example row of columns -->
 <div class="row wow animated">
-      <div class="col-md-4">
+      <div class="col-md-4 second-footer" style="margin-top:50px;">
         <h2>ABOUT US</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <a href="/about" class="text-center btn btn-info">Read more</a> </p>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <a href="/about" class="text-center btn btn-sm btn-info">Read more</a> </p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 second-footer" style="margin-top:50px;">
         <h2>CONTACT US</h2>
 
         @include('layouts.contact')
      
     </div>
-        <div class="col-md-4">
+        <div class="col-md-4 second-footer" style="margin-top:50px;">
         <address>   
-         <h2>MEETING TIME</h2>
+         <h2>MEETING DETAILS</h2>
                   
       <!--Accordion wrapper-->
 <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -24,7 +24,7 @@
     <div class="card-header" role="tab" id="headingOne">
         <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             <h5 class="mb-0">
-            Greater Accra Region <i class="fa fa-angle-down rotate-icon"></i>
+            Ashanti Region <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -60,7 +60,7 @@
     <div class="card-header" role="tab" id="headingTwo">
         <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <h5 class="mb-0">
-            Central Region <i class="fa fa-angle-down rotate-icon"></i>
+            Brong Ahafo Region  <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -100,7 +100,7 @@
     <div class="card-header" role="tab" id="headingThree">
         <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             <h5 class="mb-0">
-            Eastern Region <i class="fa fa-angle-down rotate-icon"></i>
+            Central Region  <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -140,7 +140,7 @@
     <div class="card-header" role="tab" id="headingFour">
         <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             <h5 class="mb-0">
-            Upper Eastern Region <i class="fa fa-angle-down rotate-icon"></i>
+            Eastern Region <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -180,7 +180,7 @@
     <div class="card-header" role="tab" id="headingFive">
         <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             <h5 class="mb-0">
-            Upper West Region <i class="fa fa-angle-down rotate-icon"></i>
+            Greater Accra Region <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -220,7 +220,7 @@
     <div class="card-header" role="tab" id="headingSix">
         <a class="collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
             <h5 class="mb-0">
-            Ashanti Region <i class="fa fa-angle-down rotate-icon"></i>
+            Northern Region  <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -260,7 +260,7 @@
     <div class="card-header" role="tab" id="headingSeven">
         <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
             <h5 class="mb-0">
-            Western Region <i class="fa fa-angle-down rotate-icon"></i>
+            Upper West Region  <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -300,7 +300,7 @@
     <div class="card-header" role="tab" id="headingEight">
         <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
             <h5 class="mb-0">
-            Northern Region <i class="fa fa-angle-down rotate-icon"></i>
+            Upper East Region <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -340,7 +340,7 @@
     <div class="card-header" role="tab" id="headingNine">
         <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
             <h5 class="mb-0">
-            Volta Region <i class="fa fa-angle-down rotate-icon"></i>
+            Volta Region  <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
@@ -380,7 +380,7 @@
     <div class="card-header" role="tab" id="headingTen">
         <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
             <h5 class="mb-0">
-            Brong Ahafo Region <i class="fa fa-angle-down rotate-icon"></i>
+            Western Region   <i class="fa fa-angle-down rotate-icon"></i>
             </h5>
         </a>
     </div>
