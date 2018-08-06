@@ -20,13 +20,19 @@
          <a class="nav-link" href="/" ><i class="fas fa-home"></i>Home</a>
     </li>
     
+    
+    
      <li>
         <a class="nav-link" href="{{ route('discussion') }}" ><i class="fas fa-newspaper"></i>News</a>
     </li>
+    
 
     <li> 
         <a class="nav-link" href="/members" ><i class="fas fa-users"></i>Members</a>
     </li>
+
+   
+
     <li class="welcome nav-link" >
         Welcome, {{ Auth::user()->fullname}}
     </li>

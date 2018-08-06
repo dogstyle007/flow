@@ -81,7 +81,7 @@
                           <td>{{ $user->region }}</td>
                         </tr>
 
-                        @if(Auth::id() !== $user->id)
+                       <!-- @if(Auth::id() !== $user->id)
                         
                           <tr>
                             <td>About {{ $user->firstname }}:</td>
@@ -91,14 +91,33 @@
                         @else
 
                           <tr>
-                            <td>About you:</td>
-                            <td  class="about-td">{!! $user->about !!}</td>
+                            <td>About you: </td>
+                            <td>{!! $user->about !!}</td>
+                            
                           </tr>
 
-                        @endif
+                        @endif-->
                     
                     </tbody>
                   </table>
+
+                  <hr style="background-color:#444;">
+
+                    <div class="about-section">
+                        @if(Auth::id() !== $user->id)
+
+                        <h4 class="text-center">About {{ $user->firstname }}</h4>
+                        <p>{!! $user->about !!}</p>
+
+                        @else
+
+                        <h4 class="text-center">About you</h4>
+                        <p>{!! $user->about !!}</p>
+
+                        @endif
+                    </div>
+
+                    <hr style="background-color:#444;">
 
                   @if(Auth::id() == $user->id)
                     <a href="{{route('user.profile')}}" class="btn btn-primary">Update your profile</a>

@@ -21,7 +21,9 @@ class PaymentController extends Controller
         $users = Auth::user();
         
         $users = User::all();
-        
+
+        $users = User::orderBy('payment', 'dsc')->paginate(5);
+
         return view('admin.payment.index', array('user' => $users), compact(['user','users']) );
     }
 
@@ -33,7 +35,9 @@ class PaymentController extends Controller
             if(count ($user))
             {
                 $user->payment = $request->input('payment');
+                
                 $user->update();
+                
             }
 
             alert()->success('Payment Updated Successfully')->autoclose(3000);
@@ -41,5 +45,7 @@ class PaymentController extends Controller
         
         return redirect()->back();
     }
+
+   
    
 }

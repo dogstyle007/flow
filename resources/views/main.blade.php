@@ -14,12 +14,13 @@
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/fontawesome.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/solid.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/summernote-lite.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/infocard.css') }}" rel="stylesheet">
     <link href="{{ asset('/tinymce/skins/lightgray/skin.min.css') }}" rel="stylesheet">
     <!--<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>-->
    
@@ -78,7 +79,8 @@
     <script src="{{ asset('/js/slider.js') }}"></script>
     <script src="/js/summernote-lite.js"></script>
     <script src="/js/fontawesome.js"></script>
-    <script src="/js/solid.js"></script>
+    <script src="/js/all.js"></script>
+    <script src="{{ asset('/js/brands.js') }}"></script>
     <script src="{{ asset('/js/toastr.min.js') }}"></script>
     <script src="{{ asset('/js/popper.js') }}"></script>
     <script src="{{ asset('/js/bootstrap4.7.js') }}"></script>
@@ -106,7 +108,7 @@
 <script type="text/javascript">
         $(document).ready(function() {
             $('#summernote').summernote({
-              height: '200px',
+              height: '150px',
               placeholder: 'Content here...'
 
             });

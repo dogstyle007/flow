@@ -6,7 +6,7 @@
     <h1>Registered Members</h1>
 <!-- Example row of columns -->
 
-   <div class="row">
+   <!--<div class="row">
       @foreach ($users as $user)
         <div class="col-md-5">
           <h2 class="header"><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->firstname . ' ' . $user->lastname }} <img src="/uploads/avatars/{{ $user->avatar }}" style="width:42px; height:42px; postion:absolute; top:10px; left:10px; border-radius:50%"> </a></h2>
@@ -31,8 +31,35 @@
         </div>
 
         @endforeach
-    </div>
+    </div>-->
 
+<div class="row">
+@foreach($users as $user)
+			<div class="col-md-3">
+     
+				<div class="[ info-card ]">
+					<img style="width: 100%" src="/uploads/avatars/{{ $user->avatar }}" />
+					<div class="[ info-card-details ] animate">
+						<div class="[ info-card-header ]">
+							<h1><a href="{{url('/dashboard/'.$user->username)}}"> {{$user->fullname}} </a></h1>
+							<h3> {{ $user->region }} </h3>
+						</div>
+						<div class="[ info-card-detail ]">
+							<!-- Description -->
+							<p>{!! $user->about !!}</p>
+							<div class="social">
+              <a href="{{ $user->facebook }}" target="_blank" class="[ social-icon facebook ] animate"><span class="fab fa-facebook-f"></span></a>
+
+								<a href="{{ $user->twitter }}" target="_blank" class="[ social-icon twitter ] animate"><span class="fab fa-twitter"></span></a>
+
+								<a href="{{ $user->linkedin }}" target="_blank" class="[ social-icon linkedin ] animate"><span class="fab fa-linkedin-in"></span></a>
+							</div>
+						</div>
+					</div>
+        </div>
+      </div>
+        @endforeach
+  </div>
 
 
    <center>{{ $users->appends(Request::all())->render() }}</center>
@@ -51,9 +78,9 @@
     <!-- @foreach ($results as $result)
       <li>  {{ $result }}</li>
     @endforeach -->
-<table>
+<!--<table>
   
-<!--@if($users->count() > 0)
+@if($users->count() > 0)
 
 @foreach($users as $user)
 
@@ -65,9 +92,9 @@
 
 @endforeach
 
-@endif -->
+@endif 
 
-</table>
+</table>-->
 
 
 </div>

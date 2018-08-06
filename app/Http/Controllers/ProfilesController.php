@@ -31,6 +31,9 @@ class ProfilesController extends Controller
             'phone' => 'digits_between:10,10|unique:users,phone,'. \Auth::user()->id,
             'yearOfCompletion' => 'required',
             'about' => 'min:20',
+            'facebook',
+            'twitter',
+            'linkedin'
             
         ]);
 
@@ -56,6 +59,9 @@ class ProfilesController extends Controller
         $user->address = $request->address;
         $user->yearOfCompletion = $request->yearOfCompletion;
         $user->about = $request->about;
+        $user->facebook = $request->facebook;
+        $user->twitter = $request->twitter;
+        $user->linkedin = $request->linkedin;
 
         $user->save();
 

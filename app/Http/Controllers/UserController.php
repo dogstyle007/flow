@@ -69,7 +69,7 @@ class UserController extends Controller
     
         $users = User::all();
 
-        $users = User::orderBy('firstname', 'dsc')->paginate(4);
+        $users = User::orderBy('firstname', 'dsc')->paginate(8);
         
 
         /*$collections = User::orderBy('firstname', 'desc')->get();

@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'firstname' => 'Samuel',
             'lastname' => 'Ampofo',
             'admin' => 1,
+            'approved' => 1,
             'email' => 'nanakay101@ymail.com',
             'username' => 'nanakay101',
             'phone' => '0240148282',
@@ -27,6 +28,9 @@ class UsersTableSeeder extends Seeder
             'region' => 'Greater Accra Region',
             'address' => 'Atico (Around Bubuashie) Greater Accra',
             'avatar' => 'default.jpg',
+            'facebook' => 'www.facebook.com',
+            'twitter' => 'www.twitter.com',
+            'linkedin' => 'www.linkedin.com',
             'password' => bcrypt('password')
         ]);
     }

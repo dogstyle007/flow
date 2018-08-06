@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'Admin Dashboard - Home')
+@section('title', 'Admin Dashboard - Members ')
 @section('content')
 
 <div class="container members admin">
@@ -12,11 +12,19 @@
                 </li>
 
                 <li class="list-group-item">
-                <a href="{{ route('admin.members') }}">Registered Members</a>
+                <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
 
                 <li class="list-group-item">
                 <a href="{{ route('payment.index') }}">Payment Update</a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.create') }}">Add new member</a>
+                </li>
+
+                 <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
 
                 <li class="list-group-item">

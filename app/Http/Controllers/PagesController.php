@@ -18,7 +18,7 @@ class PagesController extends Controller
   {
     $users = User::all();
 
-    $users = User::paginate(10);
+    $users = User::orderBy('payment', 'dsc')->paginate(10);
     
     return view('layouts.standing', array('user' => $users), compact(['user','users']) );
   }

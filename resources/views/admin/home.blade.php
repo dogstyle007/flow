@@ -14,11 +14,19 @@
                 </li>
 
                 <li class="list-group-item">
-                    <a href="{{ route('admin.members') }}">Registered Members</a>
+                    <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
 
                 <li class="list-group-item">
                     <a href="{{ route('payment.index') }}">Payment Update</a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.create') }}">Add new member</a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
 
                 <li class="list-group-item">

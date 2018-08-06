@@ -413,6 +413,46 @@
 </div>
 <!-- Accordion card -->
 
+<!-- Accordion card -->
+<div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingTwentyOne">
+        <a class="collapsed" data-toggle="collapse" href="#collapseTwentyOne" aria-expanded="false" aria-controls="collapseTwentyOne">
+            <h5 class="mb-0">
+            Diaspora  <i class="fa fa-angle-down rotate-icon"></i>
+            </h5>
+        </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapseTwentyOne" class="collapse" role="tabpanel" aria-labelledby="headingTwentyOne" data-parent="#accordionEx">
+        <div class="card-body">
+        <ul style="margin-left: 30px;" class="fa-ul">
+                    <li>
+                        <i class="fas fa-calendar"></i> Monday - Friday
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i> 8:30 AM – 9:30 PM
+                    </li>
+            
+            </ul>
+
+               <br>
+            
+            <ul style="margin-left: 30px;" class="fa-ul">
+                 <li>
+                     <i class="fas fa-calendar"></i> Saturday – Sunday
+                 </li>
+                 <li>
+                     <i class="fas fa-clock"></i> 10 AM – 7:30 PM
+                 </li>
+             </ul>
+        </div>
+    </div>
+</div>
+<!-- Accordion card -->
+
 </div>
 <!--/.Accordion wrapper-->
         </address>

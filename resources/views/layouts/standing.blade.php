@@ -6,7 +6,7 @@
 
 <div class="container standing">
 
-<h1> MEMBERS IN GOOD STANDING</h1>
+<h1 style="color:#fff;"> MEMBERS IN GOOD STANDING</h1>
 
    <table border = "1" width = "100%">
   
@@ -19,12 +19,15 @@
                      <th><strong>Region Associated</strong></th>
                   </tr>
                   @foreach ($users as $user)
+                        @if($user->payment > 0)
                   
-                  <tr>
-                     <td><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->firstname . ' ' . $user->lastname }}</a></td>
-                     
-                     <td> {{ $user->region }}</td>
-                  </tr>
+                              <tr>
+                              <td><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->fullname }}</a></td>
+                              
+                              <td> {{ $user->region }}</td>
+                              </tr>
+
+                        @endif
                   
                   @endforeach
                   

@@ -28,13 +28,60 @@ class AdminController extends Controller
         return view('admin.home', array('user', $users, 'post', $posts), compact('user', 'users', 'post', 'posts'));
     }
 
-    public function members()
+    public function index()
     {
 
-        $users = User::paginate(3);
+        $users = User::paginate(5);
 
 
-        return view('admin.members', array('user', $users), compact('user', 'users'));
+        return view('admin.members.index', array('user', $users), compact('user', 'users'));
+    }
+
+    public function create()
+    {
+        return view('admin.members.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'username' => 'required|string|max:20|min:5|unique:users',
+            'phone' => 'required|digits_between:10,10|unique:users',
+            'employerName' => 'required',
+            'designation' => 'required',
+            'yearOfCompletion' => 'required',
+            'mStatus' => 'required',
+            'address' => 'required',
+            'region' => 'required',
+            'diaspora',
+
+        ]);
+
+        $user = User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'username' => $request->username,
+            'phone' => $request->phone,
+            'employerName' => $request->employerName,
+            'designation' => $request->designation,
+            'yearOfCompletion' => $request->yearOfCompletion,
+            'mStatus' => $request->mStatus,
+            'address' => $request->address,
+            'region' => $request->region,
+            'diaspora' => $request->diaspora,
+            'password' => bcrypt('password')
+        ]); 
+
+
+        alert()->success('Member added successfully.')->autoclose(2000);
+
+        return redirect()->route('admin.home');
+
     }
 
     public function userDelete($id)
@@ -43,7 +90,7 @@ class AdminController extends Controller
 
         $user->delete();
 
-        alert()->success('Member deleted successfully.')->autoclose(3000);
+        alert()->success('Member deleted successfully.')->autoclose(2000);
         //Session::flash('success', 'Member deleted successfully.');
 
         return redirect()->back();
@@ -86,4 +133,44 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+
+    public function approval()
+    {
+
+        $users = User::paginate(5);
+
+        return view('admin.members.approval-queue', compact('users', $users));
+    }
+
+    public function approved($id)
+    {
+
+        $user = User::find($id);
+
+        $user->approved = 1;
+
+        $user->save();
+
+        alert()->success('Member approved successfully')->autoclose(2000);
+
+        return redirect()->back();
+    }
+
+
+    public function not_approved($id)
+    {
+
+        $user = User::find($id);
+
+        $user->approved = 0;
+
+        $user->save();
+
+        alert()->success('Member permission updated successfully')->autoclose(2000);
+
+        return redirect()->back();
+    }
+
+
 }

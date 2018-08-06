@@ -57,7 +57,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name">About you </label>
+                        <label for="name">Facebook profile</label>
+                        <input type="text" name="facebook" value="{{ $user->facebook }}"  class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Twitter profile</label>
+                        <input type="text" name="twitter" value="{{ $user->twitter }}"  class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Linkedin profile</label>
+                        <input type="text" name="linkedin" value="{{ $user->linkedin }}"  class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">About you</label>
                         <textarea name="about" id="summernote" cols="30" rows="10" class="form-control">{{ $user->about }}</textarea>
                     </div>
 

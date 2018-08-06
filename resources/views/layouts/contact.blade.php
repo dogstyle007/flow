@@ -385,5 +385,43 @@
 </div>
 <!-- Accordion card -->
 
+<!-- Accordion card -->
+<div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingTwentyTwo">
+        <a class="collapsed" data-toggle="collapse" href="#collapseTwentyTwo" aria-expanded="false" aria-controls="collapseTwentyTwo">
+            <h5 class="mb-0">
+            Diaspora <i class="fa fa-angle-down rotate-icon"></i>
+            </h5>
+        </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapseTwentyTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwentyTwo" data-parent="#accordionEx">
+        <div class="card-body">
+        <ul style="margin-left: 30px;" class="fa-ul">
+            <li>
+                <p><i class="fas fa-home"></i> <b>Office Address:</b><br> Commonwealth Hall Accra, Ghana</p>
+            </li>
+
+            <li>
+                <p><i class="fas fa-envelope"></i><b> Email: </b><br><a href="mailto:oldvandals1@gmail.com ">oldvandals1@gmail.com</a></p>
+            </li>
+
+            <li>
+                <p><i class="fas fa-mobile"></i><b> 1st Contact number: </b><a href="tel:+233303970014 ">(+233)303970000 </a></p>
+            </li>
+
+            <li>
+                <p><i class="fas fa-mobile"></i><b> 2nd Contact number: </b><a href="tel:+233303970014 ">(+233)303970000 </a></p>
+            </li>
+
+        </ul>
+        </div>
+    </div>
+</div>
+<!-- Accordion card -->
+
 </div>
 <!--/.Accordion wrapper-->

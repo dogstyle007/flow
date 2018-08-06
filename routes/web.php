@@ -23,7 +23,7 @@ Route::get('dashboard/{user}', 'UserController@viewDashboard');
 
 Route::post('/dashboard', 'UserController@update_avatar');
 
-Route::get('/members', 'UserController@members');
+Route::get('/members', 'UserController@members')->middleware('approved');
 
 Route::get('mypagination', 'UserController@myPagination');
 
@@ -60,7 +60,7 @@ Route::get('/search','UserController@search');
 
 //Route::get('/postnews', 'PostController@index');
 
-Route::get('/standing', 'PagesController@standing');
+Route::get('/standing', 'PagesController@standing')->middleware('approved');;
 
 //Route::get('/news', 'PostController@news');
 
@@ -84,9 +84,9 @@ Route::group(['middleware' => 'admin'], function() {
         'as' => 'admin.home'
     ]);
 
-    Route::get('/admin/members',[
-        'uses' => 'AdminController@members',
-        'as' => 'admin.members'
+    Route::get('/admin/members/index',[
+        'uses' => 'AdminController@index',
+        'as' => 'admin.members.index'
     ]);
 
     Route::get('/admin/user/delete/{id}',[
@@ -114,6 +114,31 @@ Route::group(['middleware' => 'admin'], function() {
         'as' => 'payment.update'
     ]);
 
+    Route::get('/admin/members/create',[
+        'uses' => 'AdminController@create',
+        'as' => 'admin.members.create'
+    ]);
+
+    Route::post('/admin/members/store',[
+        'uses' => 'AdminController@store',
+        'as' => 'admin.members.store'
+    ]);
+
+    Route::get('/admin/members/approval-queue',[
+        'uses' => 'AdminController@approval',
+        'as' => 'admin.members.approval'
+    ]);
+
+
+    Route::get('/admin/members/approved/{id}', [
+        'uses' => 'AdminController@approved',
+        'as' => 'admin.members.approved'
+    ]);
+
+    Route::get('/admin/members/not-approve/{id}', [
+        'uses' => 'AdminController@not_approved',
+        'as' => 'admin.members.not.approved'
+    ]);
 
 });
 
@@ -125,7 +150,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('news',[
         'uses' => 'PostController@news',
         'as' => 'discussion'
-    ]);
+    ])->middleware('approved');
 
    Route::get('/admin/discussion/create', [
     'uses' => 'PostController@create',

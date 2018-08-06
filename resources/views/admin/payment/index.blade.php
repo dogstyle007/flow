@@ -6,7 +6,7 @@
 
 <div class="container members standing admin">
 
-<h1>Payment Update page</h1>
+<h1 style="color:#000;">Payment Update page</h1>
 <div class="row">
         <div class="col-lg-4">
             <ul class="list-group">
@@ -15,11 +15,19 @@
                 </li>
 
                 <li class="list-group-item">
-                <a href="{{ route('admin.members') }}">Registered Members</a>
+                <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
 
                 <li class="list-group-item">
                 <a href="{{ route('payment.index') }}">Payment Update</a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.create') }}">Add new member</a>
+                </li>
+
+                 <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
 
                 <li class="list-group-item">
@@ -41,20 +49,29 @@
               <th><strong>Amount Paid</strong></th>
           </tr>
           @foreach ($users as $user)
+            @if($user->payment > 0)
+           
           <tr>
-          <td><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->firstname . ' ' . $user->lastname }}</a></td>
+          <td><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->fullname}}</a></td>
               
               <td>GH₵ {{ $user->payment }}</td>
           </tr>
+          @endif
           @endforeach
+          
           </table>
+
+          
       </td>
       
 </tr>
 
 </table>
 
+<center style="margin-top: 10px;">{{ $users->links() }}</center>
+
 <div class="panel panel-default">
+
   <h1 class="panel-heading text-center" style="margin-top:10px;" >Update Payment</h1>
   
   <div class="panel-body">
@@ -85,6 +102,7 @@
                           </select>
                           
                       </div>
+
                   </div>
 
           <div class="form-group">

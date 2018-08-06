@@ -16,11 +16,19 @@
                 </li>
 
                 <li class="list-group-item">
-                <a href="{{ route('admin.members') }}">Registered Members</a>
+                <a href="{{ route('admin.members.create') }}">Registered Members</a>
                 </li>
 
                 <li class="list-group-item">
                 <a href="{{ route('payment.index') }}">Payment Update</a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.create') }}">Add new member</a>
+                </li>
+
+                 <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
 
                 <li class="list-group-item">
@@ -46,7 +54,7 @@
                         <div class="form-group">
                         
                             <label for="title"> Post Title</label>
-                            <input name="title" id="title" class="form-control">
+                            <input name="title" id="title" value="{{ old('title') }}" class="form-control">
                         
                         </div>
                         
@@ -55,7 +63,7 @@
                             <label for="content">Post Body</label>
             
                             
-                            <textarea name="body" id="summernote" cols="30" role="10" class="form-control "></textarea>
+                            <textarea name="body" id="summernote" cols="30" role="10" class="form-control ">{{ old('body') }}</textarea>
                         
                         </div>
                         
