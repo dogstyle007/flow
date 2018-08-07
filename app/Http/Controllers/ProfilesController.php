@@ -31,9 +31,9 @@ class ProfilesController extends Controller
             'phone' => 'digits_between:10,10|unique:users,phone,'. \Auth::user()->id,
             'yearOfCompletion' => 'required',
             'about' => 'min:20',
-            'facebook',
-            'twitter',
-            'linkedin'
+            'facebook' => 'url',
+            'twitter' => 'url',
+            'linkedin' => 'url'
             
         ]);
 
@@ -69,7 +69,7 @@ class ProfilesController extends Controller
         alert()->success('Your account details have been successfully saved!')->autoclose(3000);
         //Session::flash('success', 'Account profile updated successfully');
 
-        return redirect()->back();
+        return redirect()->route('dashboard');
     }
 
 

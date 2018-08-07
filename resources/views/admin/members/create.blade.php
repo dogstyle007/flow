@@ -114,7 +114,7 @@
                             <label for="yearOfCompletion" class="col-md-4 col-form-label text-md-right">{{ __('Year of Completion') }}</label>
 
                             <div class="col-md-6">
-                                <input id="yearOfCompletion" type="yearOfCompletion" class="form-control{{ $errors->has('yearOfCompletion') ? ' is-invalid' : '' }}" name="yearOfCompletion" required>
+                            <input id="yearOfCompletion" type="number" min="2000" max="2018" step="1" value="2018" class=" form-control{{ $errors->has('yearOfCompletion') ? ' is-invalid' : '' }}" name="yearOfCompletion" required>
 
                                 @if ($errors->has('yearOfCompletion'))
                                     <span class="invalid-feedback">

@@ -14,9 +14,14 @@
       <p class="text-center animated fadeInDown">Register now to get access to all our features. Once registered and logged in, you will be able to view registered members, post replies to existing topics, so much more. It's also quick and totally free, so what are you waiting for?</p>
       <p class="text-center"><a class="btn btn-primary btn-lg" href="{{ route('register') }}" role="button"><i class="fas fa-arrow-alt-circle-right"></i> Register</a></p>
 
+    @elseif(Auth::user()->approved != 1)
+    <h3 class="display-3 text-center animated wow shake" style="font-size: 40px;" data-wow-duration="2s" data-wow-delay="3s" data-wow-offset="10"  data-wow-iteration="3">Welcome to Old Vandals Association <br>{{ Auth::user()->fullname }} </h3>
+    <p class="text-center animated fadeInDown">Thanks for registering. Your registration for membership is currently awaiting comfirmation.</p>
+    <p class="text-center"><a class="btn btn-primary btn-lg " href="{{ url('/news') }}" role="button"><i class="fas fa-search"></i> Whats new?</a></p>
+
     @else
     
-    <h3 class="display-3 text-center animated wow shake" style="font-size: 40px;" data-wow-duration="2s" data-wow-delay="3s" data-wow-offset="10"  data-wow-iteration="3">Welcome to Old Vandals Association <br>{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }} </h3>
+    <h3 class="display-3 text-center animated wow shake" style="font-size: 40px;" data-wow-duration="2s" data-wow-delay="3s" data-wow-offset="10"  data-wow-iteration="3">Welcome to Old Vandals Association <br>{{ Auth::user()->fullname }} </h3>
     <p class="text-center animated fadeInDown">Thanks for registering. So you're now a member. What's next? Well, you can start replying to posts, make friends, and much more. Have fun in the forum!</p>
     <p class="text-center"><a class="btn btn-primary btn-lg " href="{{ url('/news') }}" role="button"><i class="fas fa-search"></i> Whats new?</a></p>
 

@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="/css/stylenivo.css" type="text/css" media="screen" />-->
 
 
+
     
     @stack('css')
       
@@ -67,27 +68,28 @@
       
       @yield('content')
 
+      
       @include('layouts.footer')
+    
      
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('/js/mdb.js') }}"></script>
-    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/js/slider.js') }}"></script>
+    <script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     <script src="/js/summernote-lite.js"></script>
+    <script src="{{ asset('/js/mdb.js') }}"></script>
     <script src="/js/fontawesome.js"></script>
     <script src="/js/all.js"></script>
-    <script src="{{ asset('/js/brands.js') }}"></script>
     <script src="{{ asset('/js/toastr.min.js') }}"></script>
     <script src="{{ asset('/js/popper.js') }}"></script>
     <script src="{{ asset('/js/bootstrap4.7.js') }}"></script>
     <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('/tinymce/tinymce.min.js') }}"></script>
     <!--<script src="{{ asset('/js/profile.js') }}"></script>-->
-    
+  
+
 
 @if (Session::has('sweet_alert.alert'))
     <script>

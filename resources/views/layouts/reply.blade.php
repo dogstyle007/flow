@@ -6,7 +6,7 @@
 @section('content')
 
 <style>
-  .container{width:60%; !important;}
+  .container{width:60%;}
 </style>
 
     <div class="container mobile" style="margin-top:20px;">
@@ -35,10 +35,7 @@
                       {!! Form::button('Delete', ['class' => 'btn btn-danger btn-sm', 'type' => 'submit']) !!}
 
                       {!! Form::close() !!}
-                      
-                     
-                   
-
+         
                     @endif  
 
               </ul>

@@ -1,6 +1,5 @@
-<footer class="container">
+<footer class="footermain">
 
-    <hr>
-
-  <p>&copy; 2018 Old Vandals Association ™</p>
+<hr>
+  <p style="padding: 10px;">&copy; 2018 Old Vandals Association ™</p>
 </footer>

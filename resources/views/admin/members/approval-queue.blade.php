@@ -36,73 +36,74 @@
             </div>
 
             <div class="col-md-8">
-                   
+            
                    <table class="table table-hover">
 
-<thead>
+                <thead>
 
-<th>
-    Name
-</th>
+                <th>
+                    Name
+                </th>
 
-<th>
-    Approve
-</th>
+                <th>
+                    Approve
+                </th>
 
-<th>
-    Delete
-</th>
+                <th>
+                    Delete
+                </th>
 
-</thead>
+                </thead>
 
-    <tbody>
+                    <tbody>
 
-    @foreach($users as $user)
+                    @foreach($users as $user)
 
-    <tr>
+                    <tr>
 
-    <td>
-            
-    <a  href="{{url('/dashboard/'.$user->username)}}">{{ $user->fullname}}</a>        
-            
-    </td>
+                    <td>
+                            
+                    <a  href="{{url('/dashboard/'.$user->username)}}">{{ $user->fullname}}</a>        
+                            
+                    </td>
 
-        <td>
+                        <td>
 
-        @if(Auth::id() !== $user->id && $user->approved )
-        
-            <a  href="{{ route('admin.members.not.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Remove user permission</a>
-
-        @elseif(Auth::id() !== $user->id )
-
-            <a  href="{{ route('admin.members.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-info">Approve user</a>        
-
-        @endif
-                
-        </td>
-
-        <td>
-
-            @if(Auth::id() !== $user->id)
-
-            <a  href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Delete</a>      
-            
-            @endif
+                        @if(Auth::id() !== $user->id && $user->approved )
                         
-        </td>
-    
-    </tr>
+                            <a  href="{{ route('admin.members.not.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Remove user permission</a>
 
-    @endforeach
+                        @elseif(Auth::id() !== $user->id )
 
-</tbody>
+                            <a  href="{{ route('admin.members.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-info">Approve user</a>        
 
-</table>
+                        @endif
+                                
+                        </td>
 
-    <center>{{ $users->appends(Request::all())->render() }}</center>
+                        <td>
 
+                            @if(Auth::id() !== $user->id)
+
+                            <a  href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Delete</a>      
+                            
+                            @endif
+                                        
+                        </td>
+                    
+                            </tr>
+
+                            @endforeach
+
+                        </tbody>
+
+                        </table>
+
+                <center>{{ $users->appends(Request::all())->render() }}</center>
+            </div>
+         
         </div>
-    </div>
+
 
 </div>
 

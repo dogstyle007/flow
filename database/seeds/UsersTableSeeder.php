@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             'mStatus' => 'single',
             'about' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,',
             'payment' => '500',
-            'region' => 'Greater Accra Region',
+            'region' => 'Greater Accra',
             'address' => 'Atico (Around Bubuashie) Greater Accra',
             'avatar' => 'default.jpg',
             'facebook' => 'www.facebook.com',

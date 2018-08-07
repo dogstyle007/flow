@@ -7,8 +7,6 @@
 
 <style>
   .container{width:60%;}
-
-  
 </style>
 
 <div class="container mobile">
