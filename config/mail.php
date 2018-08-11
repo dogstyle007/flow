@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'sendmail'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('abelwisdom007@gmail.com'),
+    'username' => env('MAIL_USERNAME', 'abelwisdom007@gmail.com'),
 
-    'password' => env('Password@123'),
+    'password' => env('MAIL_PASSWORD', 'Password@123'),
 
     /*
     |--------------------------------------------------------------------------
@@ -100,8 +100,6 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
-    
 
     /*
     |--------------------------------------------------------------------------
