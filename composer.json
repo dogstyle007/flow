@@ -23,7 +23,10 @@
         "spatie/laravel-cookie-consent": "^2.4",
         "stevebauman/purify": "2.0.*",
         "unisharp/laravel-filemanager": "~1.8",
-        "uxweb/sweet-alert": "^1.4"
+        "uxweb/sweet-alert": "^1.4",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^2.0",
+        "phpunit/phpunit": "^7.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
