@@ -10,7 +10,7 @@
 
     Thank you {{$user['fullname']}}.
 
-    Your dues payment has been confirmed and updated in your profile dashboard.
+    Your dues payment of GH₵{{ $user->payment }} has been confirmed and updated in your profile dashboard.
     
 
 {{-- Subcopy --}}
