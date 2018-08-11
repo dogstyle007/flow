@@ -1,10 +1,9 @@
 @extends('main')
 
-
 @section('content')
 
-<h2>Welcome to the site {{$user['name']}}</h2>
+<h2>Welcome to Old Vandals Association {{$user['fullname']}}</h2>
 <br/>
-<p>Your registered email-id is {{$user['email']}}</p>
+<p>Your registration will be confirmed by the admin.</p>
 
 @endsection

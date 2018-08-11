@@ -328,6 +328,30 @@ nav {
   margin-top: 20px;
 }
 
+.new-member {
+  background: #ccc;
+  padding: 10px;
+  margin-top: 30px;
+  width: auto;
+  text-align: center;
+}
+
+.roletag {
+  text-align: center;
+}
+
+.role-tag {
+  font-size: 75%;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1px 6px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+  border-color: #b37524;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 699px) {
   .about-td {
     font-size: 14px !important;

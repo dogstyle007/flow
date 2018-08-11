@@ -10,11 +10,20 @@
                 <li class="list-group-item">
                 <a href="{{ route('admin.home') }}">Home</a>
                 </li>
+                
+                @role('admin')
+
+                <li class="list-group-item">
+                <a href="{{ route('discussions.create') }}">Post News</a>
+                </li>
 
                 <li class="list-group-item">
                 <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
+                
+                @endrole
 
+                @role(['admin', 'mod'])
                 <li class="list-group-item">
                 <a href="{{ route('payment.index') }}">Payment Update</a>
                 </li>
@@ -27,9 +36,8 @@
                     <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
 
-                <li class="list-group-item">
-                <a href="{{ route('discussions.create') }}">Post News</a>
-                </li>
+                @endrole
+
             </ul>
         </div>
 
@@ -43,6 +51,14 @@
             
                 <th>
                     Name
+                </th>
+
+                <th>
+                    Admin
+                </th>
+
+                <th>
+                    Moderator
                 </th>
                 
                 <th>
@@ -67,18 +83,62 @@
                         
             </td>
 
+             <td>
+
+                    
+            @if(Auth::id() !== $user->id && $user->hasRole('admin') )
+                <a  href="{{ route('admin.members.not.admin', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Revoke admin access</a>
+
+            @elseif(Auth::id() !== $user->id && $user->approved ) 
+
+                <a  href="{{ route('admin.members.admin', ['id' => $user->id]) }}" class="btn btn-sm btn-success">Make admin</a>
+            
+            @elseif(Auth::id() !== $user->id ) 
+
+                <a class="btn btn-sm btn-info">User not approved</a>
+
+            @endif 
+
+
+                
+            </td>
+
+            <td>
+
+                @if(Auth::id() !== $user->id && $user->hasRole('mod') )
+                    <a  href="{{ route('admin.members.not.moderator', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Revoke moderator access</a>
+
+                @elseif(Auth::id() !== $user->id && $user->approved ) 
+              
+                    <a  href="{{ route('admin.members.moderator', ['id' => $user->id]) }}" class="btn btn-sm btn-success">Make moderator</a>
+              
+              
+                @elseif(Auth::id() !== $user->id ) 
+
+                    <a class="btn btn-sm btn-info">User not approved</a>
+
+                @endif 
+
+              
+                        
+            </td>
+
             <td>
                         
-                <a  href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-xs btn-info">Edit</a>        
+                <a  href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-sm btn-primary">Edit</a>        
                         
             </td>
 
                  <td>
 
-                    @if(Auth::id() !== $user->id)
+                    @if(Auth::id() == $user->id )
 
-                    <a  href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-xs btn-danger">Delete</a>      
+                    <a  href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Delete</a>      
                     
+                    @elseif(Auth::id() !== $user->id && ! $user->hasRole('admin') )
+
+                    <a  href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Delete</a>      
+
                     @endif
                                 
                 </td>

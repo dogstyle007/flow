@@ -12,15 +12,32 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
+
                 @if(Auth::id() == $user->id)
 
                 <h2 class="text-center">Welcome to your dashboard {{ $user->firstname }}</h2>
+                
+                <div class="roletag">
+                
+                    @role('admin', 'mod')
+
+                      <p class="role-tag">{{ $user->roles->first()->display_name }}</p>
+                    
+                    @endrole
+                
+                  </div>
 
                 @else
                   <h2 class="text-center">{{ $user->fullname }}'s Profile</h2>
+                  
+                  <div class="roletag">
+                  @if ( Auth::user() == $user->hasRole(['admin','mod']))
+                      <p class="role-tag">{{$user->roles->first()->display_name }}</p>
 
+                  @endif
+                    </div>
                 @endif
-
+                
             </div>
             <div class="panel-body">
               <div class="row">
@@ -42,6 +59,7 @@
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
+
                       <tr>
                         <td>Username/nickname:</td>
                         <td>{{ $user->username }}</td>

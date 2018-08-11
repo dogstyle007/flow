@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\WelcomeMail;
+use App\Mail\NewUserRegistration;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
+
+
 
 class RegisterController extends Controller
 {
@@ -22,7 +27,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+   
     use RegistersUsers;
 
     /**
@@ -41,9 +46,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
-
-    
 
     /**
      * Get a validator for an incoming registration request.
@@ -91,7 +93,9 @@ class RegisterController extends Controller
         ]);
 
         Mail::to($data['email'])->send(new WelcomeMail($user));
- 
+    
+        Mail::to('4kidstv007@gmail.com')->send(new NewUserRegistration($user));
+        
         return $user;
     }
 }

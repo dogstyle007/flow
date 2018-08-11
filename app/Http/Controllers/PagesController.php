@@ -40,4 +40,8 @@ class PagesController extends Controller
     return view('layouts.pay');
   }
 
+  public function new_member()
+  {
+    return view('vendor.mail.welcome.index',['name' => 'index']);
+  }
 }

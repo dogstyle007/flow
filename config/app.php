@@ -52,8 +52,17 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost:8000'),
 
+    'loginurl' => env('HOME_URL', 'http://localhost:8000/login'),
+
+    'confirmnurl' => env('CONFIRM_URL', 'http://localhost:8000/admin/members/approval-queue'),
+
+    'dashboardurl' => env('MEMBER_DASHBOARD_URL', 'http://localhost:8000/dashboard'),
+
+    'adminurl' => env('ADMIN_DASHBOARD_URL', 'http://localhost:8000/admin/home'),
+
+    
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

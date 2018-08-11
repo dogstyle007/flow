@@ -31,6 +31,7 @@
         <a class="nav-link" href="/members" ><i class="fas fa-users"></i>Members</a>
     </li>
 
+
    
 
     <li class="welcome nav-link" >
@@ -44,11 +45,18 @@
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-    @if( Auth::user()->admin == 1 )
+    @if(check_user_permissions(request(), "Admin@index"))
 
     <a class="nav-link" href="{{ route('admin.home') }}" ><i class="fas fa-tachometer-alt"></i> Admin Dashboard</a>
-
+    
     @endif
+
+    @role('mod')
+
+    <a class="nav-link" href="{{ route('admin.home') }}" ><i class="fas fa-tachometer-alt"></i> Mod Dashboard</a>
+
+    @endrole
+    
 
             <a class="dropdown-item" href="/dashboard" ><i class="fas fa-user-tag"></i> Dashboard</a>
             

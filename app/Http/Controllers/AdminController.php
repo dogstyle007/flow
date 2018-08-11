@@ -10,6 +10,10 @@ use App\Post;
 use Illuminate\Support\Collection;
 use Session;
 use Alert;
+use App\Mail\MemberApproved;
+use App\Mail\ModeratorAlert;
+use App\Mail\AdminAlert;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -17,6 +21,7 @@ class AdminController extends Controller
     function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('check-permissions');
     }
 
     public function home()
@@ -152,7 +157,9 @@ class AdminController extends Controller
 
         $user->save();
 
-        alert()->success('Member approved successfully')->autoclose(2000);
+        alert()->success('User approved successfully')->autoclose(2000);
+
+        Mail::to($user['email'])->send(new MemberApproved($user));
 
         return redirect()->back();
     }
@@ -164,13 +171,79 @@ class AdminController extends Controller
         $user = User::find($id);
 
         $user->approved = 0;
+        //$user->detachRole("mod");
+        $user->detachRoles();
 
         $user->save();
 
-        alert()->success('Member permission updated successfully')->autoclose(2000);
+        alert()->success('User permission updated successfully')->autoclose(2000);
 
         return redirect()->back();
     }
 
+    public function admin($id)
+    {
+
+        $user = User::find($id);
+
+        $user->attachRole("admin");
+        $user->detachRole("mod");
+
+        $user->save();
+
+        alert()->success('User now an administrator')->autoclose(2000);
+
+        Mail::to($user['email'])->send(new AdminAlert($user));
+
+        return redirect()->back();
+    }
+
+
+    public function not_admin($id)
+    {
+
+        $user = User::find($id);
+
+        $user->detachRole("admin");
+
+        $user->save();
+
+        alert()->success('User removed as admin')->autoclose(2000);
+
+        return redirect()->back();
+    }
+
+
+    public function moderator($id)
+    {
+
+        $user = User::find($id);
+
+        $user->attachRole("mod");
+        $user->detachRole("admin");
+
+        $user->save();
+
+        alert()->success('User now a moderator')->autoclose(2000);
+
+        Mail::to($user['email'])->send(new ModeratorAlert($user));
+
+        return redirect()->back();
+    }
+
+
+    public function not_moderator($id)
+    {
+
+        $user = User::find($id);
+
+        $user->detachRole("mod");
+
+        $user->save();
+
+        alert()->success('User removed as moderator')->autoclose(2000);
+
+        return redirect()->back();
+    }
 
 }

@@ -31,6 +31,12 @@ Route::get('about', 'PagesController@about');
 
 Route::get('pay', 'PagesController@pay');
 
+Route::get('new-member', 'PagesController@new_member');
+
+Route::get('/mail', function () {
+    return view('vendor.mail.welcome.index');
+});
+
 Route::get('/form', function() {
     return View::make('form');
 });
@@ -77,7 +83,7 @@ Route::get('news/{postBySlug}', 'PostController@viewPost')->name('discussions.sh
 		'uses' => 'PostController@saveEditPost'
         ]);
         
-Route::group(['middleware' => 'admin'], function() {
+Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/admin/home', [
         'uses' => 'AdminController@home',
@@ -140,6 +146,26 @@ Route::group(['middleware' => 'admin'], function() {
         'as' => 'admin.members.not.approved'
     ]);
 
+    Route::get('/admin/members/admin/{id}', [
+        'uses' => 'AdminController@admin',
+        'as' => 'admin.members.admin'
+    ]);
+
+    Route::get('/admin/members/not-admin/{id}', [
+        'uses' => 'AdminController@not_admin',
+        'as' => 'admin.members.not.admin'
+    ]);
+
+    Route::get('/admin/members/moderator/{id}', [
+        'uses' => 'AdminController@moderator',
+        'as' => 'admin.members.moderator'
+    ]);
+
+    Route::get('/admin/members/not-moderator/{id}', [
+        'uses' => 'AdminController@not_moderator',
+        'as' => 'admin.members.not.moderator'
+    ]);
+
 });
 
 //Route::get('/admin', 'PostController@create');
@@ -153,9 +179,9 @@ Route::group(['middleware' => 'auth'], function(){
     ])->middleware('approved');
 
    Route::get('/admin/discussion/create', [
-    'uses' => 'PostController@create',
+    'uses' => 'PostController@createPost',
     'as' => 'discussions.create'
-   ])->middleware('admin');
+   ]);
     
     Route::post('/admin/discussions/store', [
         'uses' => 'PostController@store',

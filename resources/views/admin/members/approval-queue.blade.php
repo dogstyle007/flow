@@ -7,29 +7,36 @@
     <div class="row">
             <div class="col-lg-4">
                 <ul class="list-group">
-                    <li class="list-group-item">
-                    <a href="{{ route('admin.home') }}">Home</a>
-                    </li>
+                <li class="list-group-item">
+                <a href="{{ route('admin.home') }}">Home</a>
+                </li>
+                
+                @role('admin')
 
-                    <li class="list-group-item">
-                    <a href="{{ route('admin.members.index') }}">Registered Members</a>
-                    </li>
+                <li class="list-group-item">
+                <a href="{{ route('discussions.create') }}">Post News</a>
+                </li>
 
-                    <li class="list-group-item">
-                    <a href="{{ route('payment.index') }}">Payment Update</a>
-                    </li>
+                <li class="list-group-item">
+                <a href="{{ route('admin.members.index') }}">Registered Members</a>
+                </li>
+                
+                @endrole
 
-                    <li class="list-group-item">
-                        <a href="{{ route('admin.members.create') }}">Add new member</a>
-                    </li>
+                @role(['admin', 'mod'])
+                <li class="list-group-item">
+                <a href="{{ route('payment.index') }}">Payment Update</a>
+                </li>
 
-                    <li class="list-group-item">
-                        <a href="{{ route('admin.members.approval') }}">Approval queue</a>
-                    </li>
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.create') }}">Add new member</a>
+                </li>
 
-                    <li class="list-group-item">
-                    <a href="{{ route('discussions.create') }}">Post News</a>
-                    </li>
+                 <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
+                </li>
+
+                @endrole
                 </ul>
 
                 
@@ -69,13 +76,13 @@
 
                         <td>
 
-                        @if(Auth::id() !== $user->id && $user->approved )
+                        @if(Auth::id() !== $user->id && $user->approved && ! $user->hasRole('admin'))
                         
-                            <a  href="{{ route('admin.members.not.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Remove user permission</a>
+                            <a  href="{{ route('admin.members.not.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Revoke user approval</a>
 
-                        @elseif(Auth::id() !== $user->id )
+                        @elseif(Auth::id() !== $user->id && ! $user->hasRole('admin'))
 
-                            <a  href="{{ route('admin.members.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-info">Approve user</a>        
+                            <a  href="{{ route('admin.members.approved', ['id' => $user->id]) }}" class="btn btn-sm btn-success">Approve user</a>        
 
                         @endif
                                 
@@ -83,7 +90,7 @@
 
                         <td>
 
-                            @if(Auth::id() !== $user->id)
+                            @if(Auth::id() !== $user->id && ! $user->hasRole('admin'))
 
                             <a  href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Delete</a>      
                             

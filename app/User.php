@@ -5,11 +5,14 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Profile;
+use App\Mail\WelcomeMail;
+use Laratrust\Traits\LaratrustUserTrait;
 
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use LaratrustUserTrait; // add this trait to your user model
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +22,7 @@ class User extends Authenticatable
     protected $table = 'users';
     
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'username', 'phone', 'employerName', 'designation', 'yearOfCompletion', 'mStatus', 'about', 'admin', 'payment', 'region', 'diaspora', 'address', 'password', 'avatar', 'facebook', 'twitter', 'linkedin'
+        'firstname', 'lastname', 'email', 'username', 'phone', 'employerName', 'designation', 'yearOfCompletion', 'mStatus', 'about', 'payment', 'region', 'diaspora', 'address', 'password', 'avatar', 'facebook', 'twitter', 'linkedin'
     ];
 
 

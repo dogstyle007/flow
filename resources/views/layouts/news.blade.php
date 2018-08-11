@@ -23,7 +23,28 @@
                     <h2 class="post-h2"><a href="/news/{{$post->slug}}">{{ $post->title}}</a></h2>
                     
                     <img src="/uploads/avatars/{{ $post->user->avatar }}" style="width:32px; height:32px; top:10px; left:10px; border-radius:50%">
-                    Posted By: <a href="{{url('/dashboard/'.$post->user->username)}}"> {{$post->user->firstname . ' ' . $post->user->lastname }}</a> <br>
+                    Posted By: <a href="{{url('/dashboard/'.$post->user->username)}}"> {{$post->user->fullname }}</a> 
+                    
+                    @if(Auth::id() == $user->id)
+
+                    @role('admin', 'mod') 
+                    
+                      {{ $user->roles->first()->display_name }}
+                
+                    
+                    @endrole
+                    
+                    @else
+                   
+                      @if ( Auth::user() == $user->hasRole(['admin','mod']))
+                      
+                        {{$user->roles->first()->display_name }}
+
+                      @endif
+
+                    @endif
+
+                     <br>
                     
                     <hr>
 

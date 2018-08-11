@@ -21,6 +21,7 @@ class UserController extends Controller
        function __construct()
     {
         $this->middleware('auth', ['except' => ['welcome']]);
+        $this->middleware('check-permissions');
     }
     
     

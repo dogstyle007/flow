@@ -9,29 +9,36 @@
     <div class="row">
         <div class="col-lg-4">
             <ul class="list-group">
-                <li class="list-group-item ">
-                     <a href="{{ route('admin.home') }}">Home</a>
+            <li class="list-group-item">
+                <a href="{{ route('admin.home') }}">Home</a>
+                </li>
+                
+                @role('admin')
+
+                <li class="list-group-item">
+                <a href="{{ route('discussions.create') }}">Post News</a>
                 </li>
 
                 <li class="list-group-item">
-                    <a href="{{ route('admin.members.index') }}">Registered Members</a>
+                <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
+                
+                @endrole
 
+                @role(['admin', 'mod'])
                 <li class="list-group-item">
-                    <a href="{{ route('payment.index') }}">Payment Update</a>
+                <a href="{{ route('payment.index') }}">Payment Update</a>
                 </li>
 
                 <li class="list-group-item">
                     <a href="{{ route('admin.members.create') }}">Add new member</a>
                 </li>
 
-                <li class="list-group-item">
+                 <li class="list-group-item">
                     <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
 
-                <li class="list-group-item">
-                    <a href="{{ route('discussions.create') }}">Post News</a>
-                </li>
+                @endrole
             </ul>
         </div>
 

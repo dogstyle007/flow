@@ -14,7 +14,6 @@ class UsersTableSeeder extends Seeder
         App\User::create([
             'firstname' => 'Samuel',
             'lastname' => 'Ampofo',
-            'admin' => 1,
             'approved' => 1,
             'email' => 'nanakay101@ymail.com',
             'username' => 'nanakay101',
@@ -27,6 +26,28 @@ class UsersTableSeeder extends Seeder
             'payment' => '500',
             'region' => 'Greater Accra',
             'address' => 'Atico (Around Bubuashie) Greater Accra',
+            'avatar' => 'default.jpg',
+            'facebook' => 'www.facebook.com',
+            'twitter' => 'www.twitter.com',
+            'linkedin' => 'www.linkedin.com',
+            'password' => bcrypt('password')
+        ]);
+
+        App\User::create([
+            'firstname' => 'Johnbosco',
+            'lastname' => 'Benedict',
+            'approved' => 1,
+            'email' => '4kidstv007@gmail.com',
+            'username' => 'johnboscoville',
+            'phone' => '0236820561',
+            'employerName' => 'Johnbosco',
+            'designation' => 'A1',
+            'yearOfCompletion' => '2018',
+            'mStatus' => 'single',
+            'about' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,',
+            'payment' => '1000',
+            'region' => 'Greater Accra',
+            'address' => 'Foster home, Adenta',
             'avatar' => 'default.jpg',
             'facebook' => 'www.facebook.com',
             'twitter' => 'www.twitter.com',

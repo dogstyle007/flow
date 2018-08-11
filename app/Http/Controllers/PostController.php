@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
 use App\Post;
 use App\Reply;
+use App\User;
 use Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundExcpetion;
 use Purifier;
@@ -18,6 +19,13 @@ use DOMDocument;
 
 class PostController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('check-permissions');
+    }
+
     public function index(Request $request)
     {
         
@@ -25,12 +33,20 @@ class PostController extends Controller
         return view('layouts.postnews');
     }
     
-    public function news()
+    public function news(Request $request)
     {
+
+        if(isset($request->id)){
+            $users = User::findOrFail($request->id);
+        }else{
+            $users = Auth::user();
+        }
+        
+
         $posts = Post::with('user')->orderBy('created_at', 'descending')->paginate(5);
         //dd($posts);
 
-        return view('layouts.news', compact('posts'));
+        return view('layouts.news', compact('posts', 'users'), array('user' => $users));
     }
     
     
@@ -102,7 +118,7 @@ class PostController extends Controller
                 }
     } */
     
-    public function create()
+    public function createPost()
     {
         
         

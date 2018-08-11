@@ -20,6 +20,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\RedirectIfNotAdmin::class,
+        \App\Http\Middleware\RedirectIfNotModerator::class,
         \App\Http\Middleware\RedirectIfNotApproved::class,
         //\Spatie\CookieConsent\CookieConsentMiddleware::class,
         //\RenatoMarinho\LaravelPageSpeed\Middleware\InlineCss::class,
@@ -72,7 +73,9 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'check-permissions' => \App\Http\Middleware\CheckPermissions::class,
         'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
+        'moderator' => \App\Http\Middleware\RedirectIfNotModerator::class,
         'approved' => \App\Http\Middleware\RedirectIfNotApproved::class,
     ];
 }

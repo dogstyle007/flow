@@ -8,12 +8,17 @@ use Auth;
 use Illuminate\Support\Facades\Gate;
 use Session;
 use Alert;
+use App\Mail\PaymentAlert;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class PaymentController extends Controller
 {
     function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('check-permissions');
     }
 
     public function index()
@@ -42,6 +47,8 @@ class PaymentController extends Controller
 
             alert()->success('Payment Updated Successfully')->autoclose(3000);
             //Session::flash('success', 'Payment Updated Successfully');
+
+            Mail::to($user['email'])->send(new PaymentAlert($user));
         
         return redirect()->back();
     }
