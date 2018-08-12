@@ -43,8 +43,10 @@
             </div>
 
             <div class="col-md-8">
+                
+            <div style="overflow-x:auto;">
             
-                   <table class="table table-hover">
+                <table class="table table-hover">
 
                 <thead>
 
@@ -105,8 +107,10 @@
                         </tbody>
 
                         </table>
-
-                <center>{{ $users->appends(Request::all())->render() }}</center>
+                    
+                    </div>
+                
+                    <center>{{ $users->appends(Request::all())->render() }}</center>
             </div>
          
         </div>

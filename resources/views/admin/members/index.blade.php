@@ -4,7 +4,7 @@
 
 <div class="container members admin">
 <h1>Registered Members</h1>
-<div class="row">
+    <div class="row">
         <div class="col-lg-4">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -40,11 +40,13 @@
 
             </ul>
         </div>
+        
+        
+        <div class="col-md-8 index">
 
-        <div class="col-md-8">
+         <br>
 
-         <div class="panel-body">
-
+        <div style="overflow-x:auto;">
             <table class="table table-hover">
 
             <thead>
@@ -151,20 +153,12 @@
                 </tbody>
         
              </table>
-
+</div>
                 <center>{{ $users->appends(Request::all())->render() }}</center>
         
-            </div>
-            
         </div>
-
-        </div>
-
-   
 
     </div>
-
-
 
 </div>
 

@@ -114,9 +114,9 @@ class AdminController extends Controller
         $request->validate( [
             'firstname' => 'required',
             'lastname' => 'required',
-            'email' => 'required|email|unique:users,email,',
-            'phone' => 'digits_between:10,10|unique:users,phone',
-            'address' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'phone' => 'digits_between:10,10|unique:users,phone,' . $id,
+            'address',
             'yearOfCompletion' => 'required'
             
         ]);

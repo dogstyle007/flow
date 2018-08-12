@@ -21,6 +21,7 @@
     <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/infocard.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/simplemde/simplemde.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/tinymce/skins/lightgray/skin.min.css') }}" rel="stylesheet">
     <!--<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>-->
    
@@ -78,6 +79,7 @@
     <script src="{{ asset('/js/slider.js') }}"></script>
     <script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/plugins/simplemde/simplemde.min.js') }}"></script>
     <script src="/js/summernote-lite.js"></script>
     <script src="{{ asset('/js/mdb.js') }}"></script>
     <script src="/js/fontawesome.js"></script>
@@ -87,9 +89,27 @@
     <script src="{{ asset('/js/bootstrap4.7.js') }}"></script>
     <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('/tinymce/tinymce.min.js') }}"></script>
+    
     <!--<script src="{{ asset('/js/profile.js') }}"></script>-->
   
 
+
+<!--<script>
+  var simplemde = new SimpleMDE({
+	autofocus: true,
+  autoDownloadFontAwesome: false,
+	autosave: {
+		enabled: true,
+		uniqueId: "MyUniqueID",
+		delay: 1000,
+	},
+	placeholder: "Type here...",
+	previewRender: function(plainText) {
+		return customMarkdownParser(plainText); // Returns HTML from a custom parser
+	},
+
+});
+</script>-->
 
 @if (Session::has('sweet_alert.alert'))
     <script>
