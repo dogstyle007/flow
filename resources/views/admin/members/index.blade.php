@@ -20,6 +20,10 @@
                 <li class="list-group-item">
                 <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
+                </li>
                 
                 @endrole
 
@@ -32,21 +36,20 @@
                     <a href="{{ route('admin.members.create') }}">Add new member</a>
                 </li>
 
-                 <li class="list-group-item">
-                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
-                </li>
-
                 @endrole
 
             </ul>
         </div>
         
         
-        <div class="col-md-8 index">
+        <div class="col-md-8">
+        
+        <div class="panel-body">
 
          <br>
 
         <div style="overflow-x:auto;">
+            
             <table class="table table-hover">
 
             <thead>
@@ -153,9 +156,12 @@
                 </tbody>
         
              </table>
-</div>
+
+            </div>
+
                 <center>{{ $users->appends(Request::all())->render() }}</center>
         
+            </div>
         </div>
 
     </div>

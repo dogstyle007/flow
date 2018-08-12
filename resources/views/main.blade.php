@@ -13,19 +13,21 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/mdb.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/fontawesome.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/summernote-lite.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('/css/fontawesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">-->
     <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/infocard.css') }}" rel="stylesheet">
-    <link href="{{ asset('/plugins/simplemde/simplemde.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/tinymce/skins/lightgray/skin.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/fontawesome4.4.min.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/plugins/froala/css/codemirror.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/froala/css/froala_editor.pkgd.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/plugins/froala/css/froala_style.min.css') }}" rel="stylesheet">
     <!--<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>-->
    
-
+    
     
    <!-- <link rel="stylesheet" href="/themes/default/default.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/themes/light/light.css" type="text/css" media="screen" />
@@ -33,8 +35,6 @@
     <link rel="stylesheet" href="/themes/bar/bar.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/css/stylenivo.css" type="text/css" media="screen" />-->
-
-
 
     
     @stack('css')
@@ -79,19 +79,36 @@
     <script src="{{ asset('/js/slider.js') }}"></script>
     <script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/plugins/simplemde/simplemde.min.js') }}"></script>
-    <script src="/js/summernote-lite.js"></script>
     <script src="{{ asset('/js/mdb.js') }}"></script>
-    <script src="/js/fontawesome.js"></script>
+    <!--<script src="/js/fontawesome.js"></script>
     <script src="/js/all.js"></script>
+    <script src="/js/summernote-lite.js"></script>-->
     <script src="{{ asset('/js/toastr.min.js') }}"></script>
     <script src="{{ asset('/js/popper.js') }}"></script>
     <script src="{{ asset('/js/bootstrap4.7.js') }}"></script>
     <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('/tinymce/tinymce.min.js') }}"></script>
+
+    <script src="{{ asset('/plugins/froala/js/codemirror.min.js') }}"></script>
+    <script src="{{ asset('/plugins/froala/js/codemirrorxml.min.js') }}"></script>
+    <script src="{{ asset('/plugins/froala/js/froala_editor.pkgd.min.js') }}"></script>
     
     <!--<script src="{{ asset('/js/profile.js') }}"></script>-->
-  
+
+
+ <!-- Initialize the editor. -->
+ <script>
+    $(function() {
+      $('#edit').froalaEditor({
+        // Set the file upload URL.
+        imageUploadURL: '/upload_image.php',
+ 
+        imageUploadParams: {
+          id: 'my_editor'
+        }
+      })
+    });
+  </script>
 
 
 <!--<script>

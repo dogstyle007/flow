@@ -65,7 +65,7 @@
                         <td>{{ $user->username }}</td>
                       </tr>
 
-                      @if(Auth::id() == $user->id)
+                      @if(Auth::id() == $user->id || Auth::user()->hasRole(['admin', 'mod']))
 
                       <tr>
                         <td>Year of completion:</td>

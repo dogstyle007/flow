@@ -22,6 +22,11 @@
                 <li class="list-group-item">
                 <a href="{{ route('admin.members.index') }}">Registered Members</a>
                 </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
+                </li>
+
                 
                 @endrole
 
@@ -34,12 +39,10 @@
                     <a href="{{ route('admin.members.create') }}">Add new member</a>
                 </li>
 
-                 <li class="list-group-item">
-                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
-                </li>
-
                 @endrole
+
             </ul>
+            
         </div>
 
         <div class="col-md-8">

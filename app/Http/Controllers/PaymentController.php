@@ -40,16 +40,25 @@ class PaymentController extends Controller
             if(count ($user))
             {
                 $user->payment = $request->input('payment');
-                
+
+                if(! $user->approved)
+                {
+                    alert()->info('Payment not Successfull', 'Member not approved')->autoclose(3000);
+
+                    return redirect()->back();
+                    
+                }
+
                 $user->update();
-                
-            }
-
-            alert()->success('Payment Updated Successfully')->autoclose(3000);
-            //Session::flash('success', 'Payment Updated Successfully');
-
-            Mail::to($user['email'])->send(new PaymentAlert($user));
+            
+                alert()->success('Payment Updated Successfully')->autoclose(3000);
+                //Session::flash('success', 'Payment Updated Successfully');
+    
+                Mail::to($user['email'])->send(new PaymentAlert($user));
+    
         
+            }           
+            
         return redirect()->back();
     }
 

@@ -26,7 +26,7 @@
        //  'delete' => ['destroy', 'restore', 'forceDestroy'],
        // 'read' => ['index', 'view', 'createPost', 'paymentIndex']
 
-        'crud' => ['create', 'store', 'edit', 'home', 'userEdit', 'createPost','update', 'destroy', 'restore', 'forceDestroy', 'index', 'view']
+        'crud' => ['create', 'store', 'edit', 'home', 'userEdit', 'approval', 'createPost','update', 'destroy', 'restore', 'forceDestroy', 'index', 'view']
         
     ];
 
@@ -49,7 +49,7 @@
 
             //dd("{$permission}-{$className}");
 
-            if ($className == 'post' && in_array($method, ['edit', 'index', 'createPost', 'update', 'destroy', 'restore', 'forceDestroy']) )
+            if ($className == 'post' && in_array($method, ['edit', 'approval', 'index', 'createPost', 'update', 'destroy', 'restore', 'forceDestroy']) )
             {
                 if(! $currentUser->can('member-index'))
                 {

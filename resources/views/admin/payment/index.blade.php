@@ -10,7 +10,8 @@
 <div class="row">
         <div class="col-lg-4">
             <ul class="list-group">
-            <li class="list-group-item">
+                
+                <li class="list-group-item">
                 <a href="{{ route('admin.home') }}">Home</a>
                 </li>
                 
@@ -22,6 +23,10 @@
 
                 <li class="list-group-item">
                 <a href="{{ route('admin.members.index') }}">Registered Members</a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
                 </li>
                 
                 @endrole
@@ -35,53 +40,49 @@
                     <a href="{{ route('admin.members.create') }}">Add new member</a>
                 </li>
 
-                 <li class="list-group-item">
-                    <a href="{{ route('admin.members.approval') }}">Approval queue</a>
-                </li>
-
                 @endrole
             </ul>
         </div>
 
         <div class="col-md-8">
 
-             <table border = "1" width = "100%">
+        <table border = "1" width = "100%">
   
-  <tr>
+        <tr>
   
-      <td>
-          <table border = "1" width = "100%">
-          <tr>
-              <th><strong>Name</strong></th>
-              <th><strong>Amount Paid</strong></th>
-          </tr>
-          @foreach ($users as $user)
-            @if($user->payment > 0)
-           
-          <tr>
-          <td><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->fullname}}</a></td>
-              
-              <td>GH₵ {{ $user->payment }}</td>
-          </tr>
-          @endif
-          @endforeach
-          
-          </table>
+        <td>
+            <table border = "1" width = "100%">
+            <tr>
+                <th><strong>Name</strong></th>
+                <th><strong>Amount Paid</strong></th>
+            </tr>
+            @foreach ($users as $user)
+                @if($user->payment > 0)
+            
+            <tr>
+            <td><a href="{{url('/dashboard/'.$user->username)}}">{{ $user->fullname}}</a></td>
+                
+                <td>GH₵ {{ $user->payment }}</td>
+            </tr>
+            @endif
+            @endforeach
+            
+            </table>
 
-          
-      </td>
-      
-</tr>
+            
+        </td>
+        
+    </tr>
 
-</table>
+    </table>
 
-<center style="margin-top: 10px;">{{ $users->links() }}</center>
+    <center style="margin-top: 10px;">{{ $users->links() }}</center>
 
-<div class="panel panel-default">
+    <div class="panel panel-default">
 
-  <h1 class="panel-heading text-center" style="margin-top:10px;" >Update Payment</h1>
-  
-  <div class="panel-body">
+    <h1 class="panel-heading text-center" style="margin-top:10px;" >Update Payment</h1>
+    
+    <div class="panel-body">
       
       <form action="{{ route('payment.update') }}" method="post">
       

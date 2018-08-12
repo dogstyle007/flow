@@ -35,6 +35,11 @@ class PermissionsTableSeeder extends Seeder
         $postIndex->name = "post-index";
         $postIndex->save();
 
+         //view user approval index
+         $userApproval = new Permission();
+         $userApproval->name = "user-approval";
+         $userApproval->save();
+
          //view admin post index
          $paymentIndex = new Permission();
          $paymentIndex->name = "payment-index";
@@ -50,8 +55,8 @@ class PermissionsTableSeeder extends Seeder
         $admin = Role::whereName('admin')->first();
         $mod = Role::whereName('mod')->first();
 
-        $admin->detachPermissions([$crudPost, $addUser, $memberIndex, $paymentIndex, $postIndex, $deleteUser]);
-        $admin->attachPermissions([$crudPost, $addUser, $memberIndex, $paymentIndex, $postIndex, $deleteUser]);
+        $admin->detachPermissions([$crudPost, $addUser, $userApproval, $memberIndex, $paymentIndex, $postIndex, $deleteUser]);
+        $admin->attachPermissions([$crudPost, $addUser, $userApproval, $memberIndex, $paymentIndex, $postIndex, $deleteUser]);
 
         $mod->detachPermissions([$crudPost, $addUser, $paymentIndex]);
         $mod->attachPermissions([$crudPost, $addUser, $paymentIndex]);

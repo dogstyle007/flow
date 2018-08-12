@@ -70,7 +70,7 @@
                             <label for="content">Post Body</label>
             
                             
-                            <textarea name="body" id="summernote" cols="30" role="10" class="form-control ">{{ old('body') }}</textarea>
+                            <textarea name="body" id="edit" cols="30" role="10" class="form-control ">{{ old('body') }}</textarea>
                         
                         </div>
                         
