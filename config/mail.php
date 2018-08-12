@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', '4kidstv007@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'demo@blog.johnboscotips.com '),
         'name' => env('MAIL_FROM_NAME', 'Old Vandals Association'),
     ],
 
