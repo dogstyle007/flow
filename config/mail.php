@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'mail.johnboscotips.com'),
+    'host' => env('MAIL_HOST', 'demo@blog.johnboscotips.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 26),
+    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'demo@johnboscotips.com'),
+        'address' => env('MAIL_FROM_ADDRESS', '4kidstv007@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Old Vandals Association'),
     ],
 
