@@ -11,7 +11,7 @@
 <div class="container">
 
     <div class="panel panel-default">
-        <div class="panel-heading text-center">Update reply</div>
+        <div class="panel-heading text-center" style="margin-top:20px; color:#fff; font-size: 40px;">Update reply</div>
         
         <div class="panel-body">
             
@@ -22,9 +22,9 @@
                 
                 <div class="form-group">
                 
-                    <label for="body">Edit Reply</label>
+                    <label for="body" style="color:#fff;">Edit Reply</label>
                     
-                    <textarea name="body" id="summernote" cols="30" role="10" class="form-control">{!! $reply->body !!}</textarea>
+                    <textarea name="body" id="edit" cols="30" role="10" class="form-control">{!! $reply->body !!}</textarea>
                 
                 </div>
                 

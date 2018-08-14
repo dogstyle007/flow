@@ -18,7 +18,7 @@
 
               <!-- POST -->
                           
-                <div class="well pull-left"> 
+                <div class="well"> 
                   <div class="media-body post" style="background-color: #f6f6ec; ">
                     <h2 class="post-h2"><a href="/news/{{$post->slug}}">{{ $post->title}}</a></h2>
                     

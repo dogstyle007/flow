@@ -11,20 +11,20 @@
 <div class="container">
 
     <div class="panel panel-default">
-    <h1 class="panel-heading text-center" style="color: #fff; margin-top:10px;">Update Post</h1>
+    <h1 class="panel-heading text-center" style="margin-top:20px; color:#fff; font-size: 40px;">Update Post</h1>
         
         <div class="panel-body">
             
-            <form action="{{ route('discussions.update', ['id' => $post->id]) }}" method="post">
+            <form action="{{ route('discussions.update', ['slug' => $post->slug]) }}" method="post">
             
                 {{ csrf_field() }}
 
                 
                 <div class="form-group">
                 
-                    <label for="body">Post Body</label>
+                    <label for="body" style="color:#fff;">Post Body</label>
                     
-                    <textarea name="body" id="summernote" cols="30" role="10" class="form-control">{!! $post->body !!}</textarea>
+                    <textarea name="body" id="edit" cols="30" role="10" class="form-control">{!! $post->body !!}</textarea>
                 
                 </div>
                 

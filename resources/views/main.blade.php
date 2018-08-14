@@ -13,14 +13,14 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/mdb.min.css') }}" rel="stylesheet">
-    <!--<link href="{{ asset('/css/fontawesome.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">-->
+    <!--<link href="{{ asset('/css/fontawesome.min.css') }}" rel="stylesheet">-->
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/sweetalert.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/infocard.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/fontawesome4.4.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('/plugins/froala/css/fontawesome4.min.css') }}" rel="stylesheet">-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/plugins/froala/css/codemirror.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/plugins/froala/css/froala_editor.pkgd.min.css') }}" rel="stylesheet">
@@ -81,8 +81,8 @@
     <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/js/mdb.js') }}"></script>
     <!--<script src="/js/fontawesome.js"></script>
-    <script src="/js/all.js"></script>
     <script src="/js/summernote-lite.js"></script>-->
+    <script src="/js/all.js"></script>
     <script src="{{ asset('/js/toastr.min.js') }}"></script>
     <script src="{{ asset('/js/popper.js') }}"></script>
     <script src="{{ asset('/js/bootstrap4.7.js') }}"></script>
@@ -109,6 +109,16 @@
       })
     });
   </script>
+
+<script>
+$(function(){
+  $('a').each(function() {
+    if ($(this).prop('href') == window.location.href) {
+      $(this).addClass('current');
+    }
+  });
+});
+</script>
 
 
 <!--<script>

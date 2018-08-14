@@ -16,18 +16,15 @@
         <a class="nav-link btn btn-info" href="{{ route('register') }}"><i class="fas fa-arrow-alt-circle-right"></i>{{ __(' Register') }}</a>
     </li>
     @else
-    <li class="active">
-         <a class="nav-link" href="/" ><i class="fas fa-home"></i>Home</a>
+    <li class="nav-item ">
+         <a class="nav-link active" href="/" ><i class="fas fa-home"></i>Home</a>
     </li>
     
-    
-    
-     <li>
+     <li class="nav-item">
         <a class="nav-link" href="{{ route('discussion') }}" ><i class="fas fa-newspaper"></i>News</a>
     </li>
     
-
-    <li> 
+    <li class="nav-item"> 
         <a class="nav-link" href="/members" ><i class="fas fa-users"></i>Members</a>
     </li>
 

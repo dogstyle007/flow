@@ -57,14 +57,19 @@ hr {
   margin: auto;
 }
 
+.navbar-nav a.current {
+  background: #ccc !important;
+  color: #444 !important;
+}
+
 .members {
   background-color: #e9ecef;
   margin-top: 15px;
 }
 
-.members .row {
+.members .col-lg-4,
+.members .col-md-8 table {
   text-align: center;
-  margin: auto;
 }
 
 .members h1 {
@@ -112,9 +117,9 @@ hr {
   color: #fff;
 }
 
-.row p {
-  color: #ccc;
-}
+/*.row p{
+    color: #ccc;
+}*/
 
 .dashboard p {
   color: #000 !important;
@@ -226,11 +231,16 @@ nav {
   color: #fff;
 }
 
-.admin li:hover {
-  background-color: #a44343 !important;
+.admin .list-group-item:hover {
+  background-color: #2980b9 !important;
+  color: #fff;
 }
 
-.admin li a {
+.admin .list-group-item a:hover {
+  color: #fff !important;
+}
+
+.admin .list-group-item a {
   color: #000;
 }
 
@@ -349,6 +359,12 @@ nav {
   text-align: center;
   display: inline-block;
   border-color: #b37524;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 699px) {
+  .about-section p {
+    font-size: 13px !important;
+  }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 699px) {

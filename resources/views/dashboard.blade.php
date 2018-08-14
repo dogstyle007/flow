@@ -57,6 +57,7 @@
                 </span> </div>
           
                 <div class=" col-md-9 col-lg-9 "> 
+                <div style="overflow-x:auto;">
                   <table class="table table-user-information">
                     <tbody>
 
@@ -82,10 +83,10 @@
                         <td>{{$user->phone }}</td>
                       </tr>
 
-                      <!--<tr>
+                      <tr>
                         <td>Email:</td>
                         <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
-                      </tr>-->
+                      </tr>
 
                       <tr>
                         <td>Phone number:</td>
@@ -118,6 +119,7 @@
                     
                     </tbody>
                   </table>
+                </div>
 
                   <hr style="background-color:#444;">
 

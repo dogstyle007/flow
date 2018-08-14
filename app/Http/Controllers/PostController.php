@@ -43,7 +43,7 @@ class PostController extends Controller
         }
         
 
-        $posts = Post::with('user')->orderBy('created_at', 'descending')->paginate(5);
+        $posts = Post::with('user')->orderBy('created_at', 'descending')->simplePaginate(8);
         //dd($posts);
 
         return view('layouts.news', compact('posts', 'users'), array('user' => $users));
@@ -52,7 +52,11 @@ class PostController extends Controller
     
       public function viewPost(Post $post) {
             $post->title; // works!
-          return view('layouts.reply', compact('post'));
+
+            $postReplies = $post->replies()->simplePaginate(5);
+            //$replies = $post->replies()->simplePaginate(5);
+
+          return view('layouts.reply', compact('post', 'postReplies'));
         }
 
     
@@ -153,20 +157,20 @@ class PostController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit($slug)
     {
 
-        return view('layouts.edit', ['post' => Post::where('id', $id)->first()]);
+        return view('layouts.edit', ['post' => Post::where('slug', $slug)->first()]);
     }
 
 
-    public function update($id)
+    public function update($slug)
     {
         $this->validate(request(), [
             'body' => 'required'
         ]);
         
-        $post = Post::find($id);
+        $post = Post::where('slug', $slug)->first();
 
         $post->body = request()->body;
 
@@ -208,7 +212,14 @@ class PostController extends Controller
 
     public function edit_reply($id)
     {
+        $reply = Reply::find($id);
 
+        if( Auth::id() !== $reply->user->id )
+        {
+            alert()->error('Access denied','Why do that?')->autoclose(3000);
+            
+            return redirect()->back();
+        }
 
         return view('layouts.edit_reply', ['reply' => Reply::find($id) ]);
     }
@@ -219,6 +230,15 @@ class PostController extends Controller
         $this->validate(request(), [
             'body' => 'required'
         ]);
+
+        $reply = Reply::find($id);
+
+        if( Auth::id() !== $reply->user->id )
+        {
+            alert()->error('Reply failed','Why do that?')->autoclose(3000);
+
+            return redirect()->back();
+        }
 
         $reply = Reply::find($id);
 

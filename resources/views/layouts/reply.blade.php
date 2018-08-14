@@ -11,7 +11,7 @@
 
     <div class="container mobile" style="margin-top:20px;">
 
-                <div class="well pull-left"> 
+                <div class="well"> 
                   <div class="media-body post" style="background-color: #f6f6ec;">
                   <h2 class="post-h2"><a href="/news/{{$post->slug}}">{{ $post->title}}</a></h2>
                   
@@ -26,7 +26,7 @@
                       <p style="color:#444 !important;"><i class="fas fa-calendar"></i> Published {{ $post->created_at->diffForHumans()}}</span></p></li>
         
                     @if(Auth::id() == $post->user->id)
-                      <li><span><a href="{{ URL::route('discussions.edit', ['id' => $post->id]) }}" class="btn btn-info btn-sm "><i class="fas fa-edit"></i> Edit Post</a></span></li> 
+                      <li><span><a href="{{ URL::route('discussions.edit', ['id' => $post->slug]) }}" class="btn btn-info btn-sm "><i class="fas fa-edit"></i> Edit Post</a></span></li> 
 
                       {!! Form::open(['route' => 'delete.post', 'id' => 'delete-post-form', 'method' => 'DELETE', 'class' => 'text-right']) !!}
                       
@@ -42,7 +42,7 @@
 
                </div>
                 
-               @foreach($post->replies as $reply)
+               @foreach($postReplies as $reply)
 
 
               <div class="panel panel-default">              
@@ -82,6 +82,12 @@
 
            @endforeach
 
+      <div style="background-color: #fff !important;">
+
+        {!! $postReplies->links() !!}
+      
+      </div>
+     
                
       <div class="panel panel-default">
       
@@ -93,7 +99,7 @@
             
               <div class="form-group">
                 <label  for="reply">Leave a reply</label>
-                <textarea name="body" id="summernote" cols="30" rows="10" class="form-control" ></textarea>
+                <textarea name="body" id="edit" cols="30" rows="10" class="form-control" ></textarea>
 
               </div>
 

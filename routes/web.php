@@ -72,7 +72,7 @@ Route::get('/standing', 'PagesController@standing')->middleware('approved');;
 
 Route::get('news/{postBySlug}', 'PostController@viewPost')->name('discussions.show');
 
-	Route::get('edit/{id}', [
+	Route::get('edit/{slug}', [
 		'as' => 'get_edit_post',
 		'uses' => 'PostController@getEditPost'
 		]);

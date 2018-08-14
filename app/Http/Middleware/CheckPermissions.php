@@ -17,7 +17,7 @@ class CheckPermissions
     {
         if(! check_user_permissions($request))
         {
-            alert()->info('Unauthorized access.')->autoclose(3000);
+            alert()->error('Unauthorized access.')->autoclose(3000);
 
             return redirect()->back();
         }

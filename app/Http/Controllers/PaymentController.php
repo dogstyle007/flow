@@ -27,7 +27,7 @@ class PaymentController extends Controller
         
         $users = User::all();
 
-        $users = User::orderBy('payment', 'dsc')->paginate(5);
+        $users = User::orderBy('payment', 'dsc')->simplePaginate(10);
 
         return view('admin.payment.index', array('user' => $users), compact(['user','users']) );
     }
@@ -43,7 +43,8 @@ class PaymentController extends Controller
 
                 if(! $user->approved)
                 {
-                    alert()->info('Payment not Successfull', 'Member not approved')->autoclose(3000);
+                    
+                    alert()->error('Payment not Successfull', 'Member not approved')->autoclose(3000);
 
                     return redirect()->back();
                     
