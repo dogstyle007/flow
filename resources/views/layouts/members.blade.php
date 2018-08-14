@@ -38,7 +38,7 @@
 			<div class="col-md-3">
      
 				<div class="[ info-card ]">
-					<img style="width: 100%" src="/uploads/avatars/{{ $user->avatar }}" />
+					<img style="width: 100%;" src="/uploads/avatars/{{ $user->avatar }}" />
 					<div class="[ info-card-details ] animate">
 						<div class="[ info-card-header ]">
 							<h1><a href="{{url('/dashboard/'.$user->username)}}"> {{$user->fullname}} </a></h1>

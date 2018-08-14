@@ -14,9 +14,42 @@
     font-family: 'Lato', sans-serif;
     margin-bottom: 20px;
     overflow: hidden;
-
     
 }
+
+@media only screen and (min-width : 220px) and (max-width : 699px){
+    .members .col-md-3{
+        width: 50% !important;
+    }
+  }
+  
+  @media only screen and (min-width : 220px) and (max-width : 699px){
+    .members .col-md-3 p{
+        font-size: 12px !important;
+    }
+  }
+
+  @media only screen and (min-width : 220px) and (max-width : 699px){
+    .members .col-md-3 h1{
+        font-size: 14px !important;
+    }
+  }
+  
+  @media only screen and (min-width : 220px) and (max-width : 699px){
+    .members .col-md-3 h3{
+        font-size: 11px !important;
+    }
+  }
+
+  @media only screen and (min-width : 220px) and (max-width : 699px){
+    .info-card .info-card-details .info-card-detail .social a {
+        min-width: 25px !important;
+        padding: 4px 0px !important;
+        margin: 0px 1px !important;
+        border-radius: 10px !important;
+    }
+  }
+
 .info-card > img {
     width: 100px;
     margin-bottom: 60px;

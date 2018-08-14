@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'demo@blog.johnboscotips.com'),
+    'host' => env('MAIL_HOST', 'server231.web-hosting.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'demo@blog.johnboscotips.com '),
+        'address' => env('MAIL_FROM_ADDRESS', 'demo@johnboscotips.com '),
         'name' => env('MAIL_FROM_NAME', 'Old Vandals Association'),
     ],
 

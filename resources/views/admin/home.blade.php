@@ -89,40 +89,6 @@
                     
                  </tr>
 
-                     <thead>
-
-                        <th>
-                            Registered Users
-                        </th>
-
-                        <th>
-                            Total Posts
-                        </th>
-
-                    </thead>
-
-
-                    <tr>
-
-                        <td>
-                        @if( $users->count() > 0 )
-                            <p style="color: #a44343; border: solid #a44343; font-size: 30px;">{{ $users->count()}}</p>        
-                            @endif  
-                        </td>
-
-                        <td>
-                        @if( $posts->count() > 0 )
-                            <p style="color: #a44343; border: solid #a44343; font-size: 30px;">{{ $posts->count()}}</p>        
-                            
-                            @else
-
-                            <p style="color: #a44343; border: solid #a44343; font-size: 30px;">No Post</p> 
-
-                            @endif  
-                        </td>
-                    
-                     </tr>
-
                  </tbody>
                 
                 </table>

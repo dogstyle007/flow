@@ -58,17 +58,17 @@
 
                     <div class="form-group">
                         <label for="name">Facebook profile</label>
-                        <input type="url" name="facebook" value="{{ $user->facebook }}"  class="form-control">
+                        <input type="url" name="facebook" value="{{ $user->facebook }}" required pattern="https?://.+"  class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="name">Twitter profile</label>
-                        <input type="url" name="twitter" value="{{ $user->twitter }}"  class="form-control">
+                        <input type="url" name="twitter" value="{{ $user->twitter }}" required pattern="https?://.+" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="name">Linkedin profile</label>
-                        <input type="url" name="linkedin" value="{{ $user->linkedin }}"  class="form-control">
+                        <input type="url" name="linkedin" value="{{ $user->linkedin }}" required pattern="https?://.+" class="form-control">
                     </div>
 
                     <div class="form-group">

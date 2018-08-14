@@ -89,7 +89,7 @@
                       </tr>
 
                       <tr>
-                        <td>Phone number:</td>
+                        <td>Address/Landmark:</td>
                         <td>{{$user->address }}</td>
                       </tr>
 
