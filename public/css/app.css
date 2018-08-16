@@ -362,6 +362,19 @@ nav {
 }
 
 @media only screen and (min-width: 220px) and (max-width: 699px) {
+  .navbar-brand {
+    font-size: 13px !important;
+  }
+}
+
+@media only screen and (min-width: 220px) and (max-width: 699px) {
+  .navbar-brand img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media only screen and (min-width: 220px) and (max-width: 699px) {
   .about-section p {
     font-size: 13px !important;
   }

@@ -12,7 +12,13 @@
 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
     </p>
 
-
+<div class="block-body block-row">
+<center>
+<script type="text/javascript" src="//cdn.crichd.im/channel.js"></script>
+<script type="text/javascript">id='ten2'; id_width=620; id_height=490; id_p=2;</script>
+<iframe src="http://cdn.crichd.im/embed2.php?id=ten2&amp;vw=620&amp;vh=490&amp;p=2" height="490" width="620" margin="0" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="" __idm_id__="649669633"></iframe>
+</center>
+</div>
 
 </div>
 

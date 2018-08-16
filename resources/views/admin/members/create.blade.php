@@ -57,7 +57,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username/Nickname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required>
+                                <input id="username" type="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" placeholder="min 5 characters" value="{{ old('username') }}" required>
 
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback">
